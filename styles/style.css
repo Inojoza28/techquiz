@@ -19,6 +19,7 @@ body {
 
 /* Container Principal */
 .container {
+    position: relative;
     max-width: 600px;
     width: 100%;
     text-align: center;
