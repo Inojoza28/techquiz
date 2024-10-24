@@ -1,0 +1,416 @@
+/* Reset de estilo para uniformidade */
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo geral da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+}
+
+/* Container Principal */
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Animação de transição suave */
+.container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.container.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para o Header */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Alinhamento da Logo e Título */
+.logo-titulo {
+    display: flex;
+    align-items: center; /* Alinha a logo e o título verticalmente */
+    justify-content: center; /* Centraliza a logo e o título horizontalmente */
+    gap: 10px; /* Espaçamento entre a logo e o título */
+}
+
+/* Estilo para a Logo */
+
+.logo-techquiz {
+    width: 40px; /* Ajuste a largura conforme necessário */
+    height: auto;
+    position: relative;
+    top: -5px; /* Move a logo 5px para cima */
+}
+
+
+/* Header do Quiz */
+.quiz-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.quiz-header p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Botão para iniciar o quiz */
+.btn-start {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: #2980b9;
+}
+
+/* Oculta elementos não visíveis inicialmente */
+.oculto {
+    display: none;
+}
+
+/* Estilo para os ícones nos botões */
+.btn-start i, .btn-next i {
+    margin-right: 8px;
+}
+
+/* Estilo dos ícones nas perguntas */
+.opcoes i {
+    margin-right: 10px;
+    color: #3498db; /* Cor padrão do ícone */
+}
+
+/* Ícone de pergunta no título */
+h2 i {
+    color: #34495e;
+    margin-right: 8px;
+}
+
+
+/* Seção de Perguntas do Quiz */
+.quiz-questions {
+    margin-top: 20px;
+}
+
+#question-container {
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos da Barra de Progresso */
+.progress-bar-container {
+    width: 100%;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #3498db;
+    transition: width 0.3s ease, background-color 0.3s ease; /* Transição da cor e largura */
+}
+
+/* Estilo do Ícone de Fechar no Canto Superior Direito */
+.fechar-quiz {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fechar-quiz:hover {
+    color: #c0392b;
+    transform: scale(1.1); /* Leve aumento ao passar o mouse */
+}
+
+/* Botão Próxima */
+.btn-next {
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-next:hover {
+    background-color: #27ae60;
+}
+
+/* Opções de Respostas */
+.opcoes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opcao {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.opcao:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.opcao.selecionada {
+    background-color: #8a34db;
+    color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do Resultado Final */
+
+/* Estilo do Resultado Final */
+.resultado-container {
+    position: relative; /* Define o container como referência para o posicionamento */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.resultado-container h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado-container h2 i {
+    margin-right: 10px;
+    color: #2980b9; /* Cor dos ícones específicos das áreas */
+}
+
+.resultado-container p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.botao-estudo {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-estudo:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo do Botão de Reinício */
+.botao-reiniciar {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-reiniciar:hover {
+    background-color: #2980b9;
+}
+
+.resultado-final {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.resultado-final h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.resultado-final p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.botao-estudo {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-estudo:hover {
+    background-color: #c0392b;
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+    .container {
+        padding: 10px;
+    }
+
+    #question-container {
+        padding: 15px;
+    }
+
+    .btn-start, .btn-next {
+        width: 100%;
+        padding: 15px 0;
+    }
+    .resultado-container {
+        padding: 15px;
+    }
+
+    .resultado-container h2 {
+        font-size: 1.6rem;
+        flex-direction: column; /* Ajuste para dispositivos menores */
+        text-align: center;
+    }
+
+    .resultado-container p {
+        font-size: 1rem;
+    }
+
+    .botao-estudo,
+    .botao-reiniciar {
+        padding: 10px 0;
+        width: 100%; /* Botões ocupam toda a largura da tela */
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 85%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+    .quiz-header h1{
+        font-size: 26px;
+    }
+    .quiz-header p{
+        font-size: 18px;
+    }
+
+    .btn-start, .btn-next, .botao-estudo {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    #question-container {
+        padding: 10px;
+    }
+    .resultado-container {
+        padding: 10px;
+    }
+
+    .resultado-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .resultado-container p {
+        font-size: 0.9rem;
+    }
+
+    .botao-estudo,
+    .botao-reiniciar {
+        padding: 12px 0;
+        width: 100%; /* Botões ocupam toda a largura da tela */
+        font-size: 1rem;
+    }
+
+}
+
+
