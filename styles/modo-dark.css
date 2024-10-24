@@ -1,0 +1,103 @@
+
+/* Botão de Alternância de Modo */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Centralizando o ícone no botão */
+.theme-toggle i {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsividade do botão */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 25px;  /* Ajustar o tamanho do botão para tablets */
+        height: 25px;
+        font-size: 14px;  /* Tamanho do ícone reduzido */
+        top: 26px;
+        right: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        width: 35px;  /* Ajustar o tamanho do botão para smartphones */
+        height: 35px;
+        font-size: 14px;  /* Tamanho do ícone ainda menor */
+        top: 26px;
+        padding: 12px;
+        right: 20px;
+    }
+}
+
+/* Modo Dark */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0; /* Texto um pouco mais suave */
+}
+body.dark-mode .container{
+    border-bottom: 2px solid #2980b9;
+    background-color: #252525;
+    box-shadow: 0px 5px 15px rgba(0, 110, 255, 0.1);
+}
+
+body.dark-mode #question-container{
+    background-color: #3d3d3d;
+}
+
+body.dark-mode h2 i{
+    color: #3498db;
+}
+
+body.dark-mode .quiz-header h1{
+    color: #ebebeb;
+}
+
+body.dark-mode h2{
+    color: #ebebeb;
+}
+
+body.dark-mode .quiz-header p{
+    color: #898989;
+}
+
+body.dark-mode .opcao{
+    background-color: aliceblue;
+    color: #3d3d3d;
+}
+
+body.dark-mode .opcao.selecionada{
+    background-color: #2980b9;
+    color: aliceblue;
+}
+
+body.dark-mode .resultado-container h2{
+    color: #ebebeb;
+}
+
+body.dark-mode .resultado-container p{
+    color: #c4c4c4;
+}

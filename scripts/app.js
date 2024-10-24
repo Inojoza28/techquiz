@@ -141,8 +141,6 @@ function carregarPergunta() {
 }
 
 
-
-// Função para selecionar uma resposta
 // Função para selecionar uma resposta
 function selecionarResposta(opcaoSelecionada) {
     // Remove a classe 'selecionada' de qualquer outra opção selecionada e restaura o ícone
@@ -346,7 +344,7 @@ function exibirResultado(areaEscolhida) {
     document.getElementById('fecharQuiz').addEventListener('click', voltarParaTelaInicial);
 }
 
-// Função para reiniciar o quiz
+
 // Função para reiniciar o quiz e voltar à primeira pergunta
 function reiniciarQuiz() {
     // Reseta as variáveis de controle
@@ -375,9 +373,13 @@ function voltarParaTelaInicial() {
     progressBarFill.style.backgroundColor = '#3498db'; // Volta à cor padrão
 
     // Oculta o resultado final e volta para a tela inicial
+    // Oculta o resultado final e volta para a tela inicial
     quizQuestionsSection.classList.remove('resultado-final');
     quizQuestionsSection.classList.add('oculto');
     startQuizSection.classList.remove('oculto');
+
+    // Oculta a barra de progresso
+    document.querySelector('.progress-bar-container').classList.add('oculto');
 
     // Oculta o "X" novamente
     document.getElementById('fecharQuiz').classList.add('oculto');

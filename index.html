@@ -7,22 +7,29 @@
     <title>TechQuiz - Descubra Sua Área Ideal</title>
     <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/modo-dark.css">
      <!-- Link para a biblioteca Font Awesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 </head>
 <body>
+
+    <!-- Botão de Modo Dark/Light -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
+
     <!-- Container Principal -->
     <div class="container">
-        <!-- Header do Quiz -->
-<!-- Header do Quiz -->
-<header class="quiz-header">
+        
+    <!-- Header do Quiz -->
+    <header class="quiz-header">
     <div class="logo-titulo">
         <img src="assets/images/Logo.png" alt="Logo TechQuiz" class="logo-techquiz"> <!-- Logo -->
         <h1>TechQuiz <span class="fechar-quiz oculto" id="fecharQuiz"><i class="fas fa-times"></i></span></h1>
     </div>
     <p>Descubra qual área de TI combina melhor com você</p>
-</header>
+    </header>
 
 
         <!-- Seção de Início do Quiz -->
@@ -47,6 +54,7 @@
     </div>
 
     <!-- Link para o arquivo JavaScript -->
+     <script src="scripts/modo-dark.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>
