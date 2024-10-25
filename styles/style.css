@@ -456,10 +456,14 @@ h2 i {
     }
 }
 
+/* Estilos gerais para o modo responsivo */
+
 @media (max-width: 768px) {
     .container {
         max-width: 90%;
         padding: 15px;
+        margin-top: 30px; /* Define o espaçamento fixo do topo */
+        position: relative; /* Mantém a posição relativa */
     }
 
     h1 {
@@ -473,9 +477,6 @@ h2 i {
     p {
         font-size: 1rem;
     }
-    .container {
-        padding: 10px;
-    }
 
     #question-container {
         padding: 15px;
@@ -485,6 +486,7 @@ h2 i {
         width: 100%;
         padding: 15px 0;
     }
+
     .resultado-container {
         padding: 15px;
     }
@@ -511,10 +513,14 @@ h2 i {
     .container {
         max-width: 85%;
         padding: 15px;
+        margin-top: 30px; /* Define o espaçamento fixo do topo */
+        position: relative; /* Mantém a posição relativa */
     }
-    .modal-content{
+
+    .modal-content {
         width: 78%;
     }
+
     h1 {
         font-size: 22px;
     }
@@ -522,10 +528,12 @@ h2 i {
     h2 {
         font-size: 1.2rem;
     }
-    .quiz-header h1{
+
+    .quiz-header h1 {
         font-size: 26px;
     }
-    .quiz-header p{
+
+    .quiz-header p {
         font-size: 18px;
     }
 
@@ -538,6 +546,7 @@ h2 i {
     #question-container {
         padding: 10px;
     }
+
     .resultado-container {
         padding: 10px;
     }
@@ -558,7 +567,7 @@ h2 i {
         width: 100%; /* Botões ocupam toda a largura da tela */
         font-size: 1rem;
     }
-
 }
+
 
 
