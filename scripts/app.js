@@ -104,12 +104,25 @@ let indicePerguntaAtual = 0;
 // Armazena as respostas do usuário
 let respostasUsuario = [];
 
+let quizIniciado = false; // Variável para controlar se o quiz foi iniciado
+
 // Função para iniciar o quiz
 startBtn.addEventListener('click', () => {
-    startQuizSection.classList.add('oculto'); // Oculta a seção de início
-    quizQuestionsSection.classList.remove('oculto'); // Exibe as perguntas
-    document.querySelector('.progress-bar-container').classList.remove('oculto'); // Exibe a barra de progresso
-    carregarPergunta(); // Carrega a primeira pergunta
+    startQuizSection.classList.add('oculto');
+    quizQuestionsSection.classList.remove('oculto');
+    document.querySelector('.progress-bar-container').classList.remove('oculto');
+    carregarPergunta();
+    quizIniciado = true; // Marca que o quiz foi iniciado
+});
+
+// Evento antes de sair da página
+window.addEventListener('beforeunload', (event) => {
+    if (quizIniciado) {
+        // Mensagem personalizada pode não aparecer em alguns navegadores
+        const mensagem = "Tem certeza que deseja sair dessa página? Você perderá o progresso do quiz.";
+        event.returnValue = mensagem; // Define a mensagem de retorno
+        return mensagem; // Para alguns navegadores que aceitam retornar uma string
+    }
 });
 
 // Botão "Começar Quiz" com ícone
@@ -286,7 +299,6 @@ function calcularResultado() {
 
 
 
-// Função para exibir o resultado final ao usuário
 // Função para exibir o resultado final ao usuário
 function exibirResultado(areaEscolhida) {
     const descricoes = {
@@ -592,7 +604,7 @@ function baixarRelatorio(userName) {
   Nome do Usuário: ${userName}
   Data do Teste: ${dataAtual}
     
-  Área Recomendada: ${resultadoEscolhido}
+  Área Recomendada: ${resultadoEscolhido}\n 
   Descrição da Área:
   ${infoArea.descricao}
 
@@ -602,9 +614,9 @@ function baixarRelatorio(userName) {
   Recursos Recomendados para Estudo:
     - ${infoArea.recursos.join('\n    - ')}
 
-=============================================
+====================================
 😁👋 Obrigado por usar o TechQuiz! Continue explorando e aprimorando suas habilidades para alcançar o sucesso na área escolhida!
-=============================================
+====================================
     `;
 
     // Geração do arquivo de relatório
