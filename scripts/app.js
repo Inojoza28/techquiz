@@ -104,7 +104,7 @@ let indicePerguntaAtual = 0;
 // Armazena as respostas do usuário
 let respostasUsuario = [];
 
-let quizIniciado = false; // Variável para controlar se o quiz foi iniciado
+let quizIniciado = false;
 
 // Função para iniciar o quiz
 startBtn.addEventListener('click', () => {
@@ -115,15 +115,31 @@ startBtn.addEventListener('click', () => {
     quizIniciado = true; // Marca que o quiz foi iniciado
 });
 
-// Evento antes de sair da página
-window.addEventListener('beforeunload', (event) => {
+// Adiciona o evento `beforeunload` quando o quiz for iniciado
+window.addEventListener('beforeunload', function (e) {
     if (quizIniciado) {
-        // Mensagem personalizada pode não aparecer em alguns navegadores
-        const mensagem = "Tem certeza que deseja sair dessa página? Você perderá o progresso do quiz.";
-        event.returnValue = mensagem; // Define a mensagem de retorno
-        return mensagem; // Para alguns navegadores que aceitam retornar uma string
+        const mensagem = 'Tem certeza que deseja sair dessa página? Você perderá o progresso do quiz.';
+        e.preventDefault(); // Previne o comportamento padrão
+        e.returnValue = mensagem; // Defina a mensagem de retorno para exibir o alerta
+        return mensagem; // Retorne a mensagem de alerta
     }
 });
+
+// Função para voltar à tela inicial do quiz
+function voltarParaTelaInicial() {
+    quizIniciado = false; // Reseta o estado do quiz para indicar que ele não está mais ativo
+    indicePerguntaAtual = 0;
+    respostasUsuario = [];
+    progressBarFill.style.width = '0%';
+    progressBarFill.style.backgroundColor = '#3498db';
+    quizQuestionsSection.classList.remove('resultado-final');
+    quizQuestionsSection.classList.add('oculto');
+    startQuizSection.classList.remove('oculto');
+    document.querySelector('.progress-bar-container').classList.add('oculto');
+    document.getElementById('fecharQuiz').classList.add('oculto');
+    document.getElementById('download-result-btn').classList.add('oculto');
+}
+
 
 // Botão "Começar Quiz" com ícone
 startBtn.innerHTML = `<i class="fas fa-play"></i> Começar Quiz`; // Ícone de "play"
