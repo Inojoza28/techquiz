@@ -330,7 +330,7 @@ h2 i {
 }
 
 .botao-baixar:hover {
-    background-color: #16a085; /* Cor verde mais escura no hover */
+    background-color: rgb(22, 187, 94); /* Cor verde mais escura no hover */
     transform: translateY(-3px); /* Efeito de levantar ao passar o mouse */
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
 }
