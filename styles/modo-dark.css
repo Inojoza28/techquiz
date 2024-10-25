@@ -99,6 +99,10 @@ body.dark-mode .resultado-container h2{
     color: #ebebeb;
 }
 
+body.dark-mode .modal-content{
+    background-color: #2f2f2f;
+}
+
 body.dark-mode .resultado-container p{
     color: #c4c4c4;
 }

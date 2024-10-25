@@ -51,8 +51,19 @@
                 <button id="next-btn" class="btn-next oculto">Próxima</button>
             </div>
         </section>
-    </div>
+        <!-- Botão de Baixar Relatório fora do resultado, mas dentro do container -->
+        <button id="download-result-btn" class="botao-baixar oculto"><i class="fas fa-download"></i> Baixar Resultado</button>
 
+    </div>
+<!-- Modal para Preencher o Nome -->
+<div id="modal-download" class="modal oculto">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h3>Preencha seu Nome para Baixar o Relatório</h3>
+        <input type="text" id="user-name" placeholder="Digite seu nome" required>
+        <button id="confirm-download" class="botao-confirmar"><i class="fas fa-download"></i> Confirmar Download</button>
+    </div>
+</div>
     <!-- Link para o arquivo JavaScript -->
      <script src="scripts/modo-dark.js"></script>
     <script src="scripts/app.js"></script>

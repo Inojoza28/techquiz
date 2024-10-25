@@ -156,8 +156,8 @@ h2 i {
 /* Estilo do Ícone de Fechar no Canto Superior Direito */
 .fechar-quiz {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 14px;
+    right: 18px;
     font-size: 1.5rem;
     color: #e74c3c;
     cursor: pointer;
@@ -308,6 +308,147 @@ h2 i {
     background-color: #c0392b;
 }
 
+/* Classe para ocultar elementos */
+.oculto {
+    display: none !important; /* Garante que o elemento seja oculto */
+}
+
+
+/* Botão de Baixar Relatório */
+.botao-baixar {
+    display: inline-block;
+    margin: 20px 0;
+    background-color: rgb(53 187 110); /* Cor verde suave */
+    color: #ffffff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Botão arredondado */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.botao-baixar:hover {
+    background-color: #16a085; /* Cor verde mais escura no hover */
+    transform: translateY(-3px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.botao-baixar:active {
+    transform: translateY(0); /* Remove o efeito de levantar ao clicar */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 79%); /* Fundo semitransparente escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Quando o modal não estiver oculto */
+.modal:not(.oculto) {
+    opacity: 1;
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animação de Fade In para o Modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação de Aparição Lenta */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1.8s ease; /* Transição suave apenas na opacidade */
+}
+
+/* Quando a classe "aparecer" estiver ativa */
+.fade-in.aparecer {
+    opacity: 1;
+}
+
+
+/* Botão Fechar no Modal */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #e74c3c; /* Vermelho suave */
+}
+
+/* Campo de Entrada no Modal */
+#user-name {
+    width: 80%;
+    padding: 12px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#user-name:focus {
+    border-color: #1abc9c; /* Cor verde ao focar */
+}
+
+/* Botão de Confirmar Download */
+.botao-confirmar {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px; /* Botão arredondado */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.botao-confirmar:hover {
+    background-color: #2980b9; /* Azul mais escuro no hover */
+    transform: translateY(-3px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.botao-confirmar:active {
+    transform: translateY(0); /* Remove o efeito de levantar ao clicar */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Ajustes de Responsividade */
 @media (max-width: 1024px) {
     .container {
@@ -370,6 +511,9 @@ h2 i {
     .container {
         max-width: 85%;
         padding: 15px;
+    }
+    .modal-content{
+        width: 78%;
     }
     h1 {
         font-size: 22px;

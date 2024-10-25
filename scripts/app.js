@@ -6,6 +6,14 @@ const quizQuestionsSection = document.querySelector('.quiz-questions');
 const startQuizSection = document.querySelector('.start-quiz');
 const progressBarFill = document.querySelector('.progress-bar-fill');
 
+// Seleção de elementos do modal e botões de download
+const downloadBtn = document.getElementById('download-result-btn');
+const modal = document.getElementById('modal-download');
+const closeModalBtn = document.getElementById('closeModal');
+const confirmDownloadBtn = document.getElementById('confirm-download');
+const userNameInput = document.getElementById('user-name');
+
+
 // Dados do Quiz: perguntas e opções reformuladas e ampliadas
 const perguntas = [
     {
@@ -321,8 +329,9 @@ function exibirResultado(areaEscolhida) {
 
     const resultado = descricoes[areaEscolhida];
 
+    // Adiciona a classe "fade-in" para animação suave
     questionContainer.innerHTML = `
-        <div class="resultado-container">
+        <div class="resultado-container fade-in">
             <h2>
                 <i class="${resultado.icone}"></i> Área Recomendada: ${areaEscolhida}
             </h2>
@@ -331,21 +340,41 @@ function exibirResultado(areaEscolhida) {
             <button id="reiniciar-btn" class="botao-reiniciar"><i class="fas fa-redo"></i> Reiniciar Quiz</button>
         </div>
     `;
+
     nextBtn.classList.add('oculto');
     quizQuestionsSection.classList.add('resultado-final');
 
-    // Torna o "X" visível ao completar o quiz
-    document.getElementById('fecharQuiz').classList.remove('oculto');
+    // Exibe o botão de download somente ao final do quiz com animação suave
+    downloadBtn.classList.add('fade-in');
+    downloadBtn.classList.remove('oculto');
+
+    // Animação de aparição para o resultado e botão de download
+    setTimeout(() => {
+        const resultadoContainer = document.querySelector('.resultado-container');
+        if (resultadoContainer) resultadoContainer.classList.add('aparecer');
+        downloadBtn.classList.add('aparecer');
+    }, 100); // Pequeno atraso para ativar a animação
+
+    // Exibe o "X" ao final do quiz
+    const fecharQuizBtn = document.getElementById('fecharQuiz');
+    if (fecharQuizBtn) {
+        fecharQuizBtn.classList.remove('oculto');
+    }
+
+    // Guarda o resultado final para o relatório
+    window.resultadoFinal = areaEscolhida;
 
     // Adiciona evento para o botão de reiniciar
     document.getElementById('reiniciar-btn').addEventListener('click', reiniciarQuiz);
 
     // Adiciona evento para o botão de fechar
-    document.getElementById('fecharQuiz').addEventListener('click', voltarParaTelaInicial);
+    if (fecharQuizBtn) {
+        fecharQuizBtn.addEventListener('click', voltarParaTelaInicial);
+    }
 }
 
-
 // Função para reiniciar o quiz e voltar à primeira pergunta
+
 function reiniciarQuiz() {
     // Reseta as variáveis de controle
     indicePerguntaAtual = 0;
@@ -355,36 +384,55 @@ function reiniciarQuiz() {
     progressBarFill.style.width = '0%';
     progressBarFill.style.backgroundColor = '#3498db'; // Volta à cor padrão
 
+    // Oculta o botão de download novamente
+    downloadBtn.classList.add('oculto');
+
     // Oculta o resultado final e exibe a seção de perguntas
     quizQuestionsSection.classList.remove('resultado-final');
-    
+
     // Recarrega a primeira pergunta do quiz
     carregarPergunta();
 }
 
-// Função para voltar à tela inicial do quiz
+
+// Função para voltar à tela inicial do quiz com confirmação
 function voltarParaTelaInicial() {
-    // Reseta as variáveis de controle
-    indicePerguntaAtual = 0;
-    respostasUsuario = [];
+    // Alerta de confirmação antes de fechar o quiz
+    const confirmarFechamento = confirm("Tem certeza que deseja fechar o quiz?");
 
-    // Reseta o estilo da barra de progresso
-    progressBarFill.style.width = '0%';
-    progressBarFill.style.backgroundColor = '#3498db'; // Volta à cor padrão
+    if (confirmarFechamento) {
+        // Reseta as variáveis de controle
+        indicePerguntaAtual = 0;
+        respostasUsuario = [];
 
-    // Oculta o resultado final e volta para a tela inicial
-    // Oculta o resultado final e volta para a tela inicial
-    quizQuestionsSection.classList.remove('resultado-final');
-    quizQuestionsSection.classList.add('oculto');
-    startQuizSection.classList.remove('oculto');
+        // Reseta o estilo da barra de progresso
+        progressBarFill.style.width = '0%';
+        progressBarFill.style.backgroundColor = '#3498db'; // Volta à cor padrão
 
-    // Oculta a barra de progresso
-    document.querySelector('.progress-bar-container').classList.add('oculto');
+        // Oculta o resultado final e volta para a tela inicial
+        quizQuestionsSection.classList.remove('resultado-final');
+        quizQuestionsSection.classList.add('oculto');
+        startQuizSection.classList.remove('oculto');
 
-    // Oculta o "X" novamente
-    document.getElementById('fecharQuiz').classList.add('oculto');
+        // Oculta a barra de progresso
+        document.querySelector('.progress-bar-container').classList.add('oculto');
+
+        // Oculta o "X" somente ao voltar para a tela inicial
+        const fecharQuizBtn = document.getElementById('fecharQuiz');
+        if (fecharQuizBtn) {
+            fecharQuizBtn.classList.add('oculto');
+        }
+
+        // Oculta o botão de download novamente
+        downloadBtn.classList.add('oculto');
+    }
 }
 
+// Adiciona evento para o botão de fechar com confirmação
+const fecharQuizBtn = document.getElementById('fecharQuiz');
+if (fecharQuizBtn) {
+    fecharQuizBtn.addEventListener('click', voltarParaTelaInicial);
+}
 
 
 
@@ -398,6 +446,53 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarBarraDeProgresso(); // Atualiza a barra e o contador assim que a página carrega
 });
 
+// Função para abrir o modal quando o botão de download for clicado
+downloadBtn.addEventListener('click', () => {
+    modal.classList.remove('oculto'); // Remove a classe "oculto" para exibir o modal
+});
+
+// Função para fechar o modal ao clicar no "X"
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('oculto'); // Adiciona a classe "oculto" para ocultar o modal
+});
+
+
+// Função para abrir o modal quando o botão de download for clicado
+downloadBtn.addEventListener('click', () => {
+    modal.classList.remove('oculto');
+});
+
+// Função para fechar o modal
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('oculto');
+});
+
+// Função para validar o nome e baixar o relatório
+confirmDownloadBtn.addEventListener('click', () => {
+    const userName = userNameInput.value.trim();
+
+    if (userName !== '') {
+        baixarRelatorio(userName);
+        modal.classList.add('oculto');
+    } else {
+        alert('Por favor, preencha seu nome antes de baixar o relatório.');
+    }
+});
+
+// Função para baixar o relatório
+function baixarRelatorio(userName) {
+    const resultadoEscolhido = window.resultadoFinal || 'Não disponível'; // Captura o resultado final
+    const content = `Relatório de Resultado - ${userName}\n\nObrigado por usar o TechQuiz!\nSua área recomendada é: ${resultadoEscolhido}.\n\nContinue explorando essa área para mais oportunidades!`;
+    
+    const blob = new Blob([content], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `Relatorio_${userName}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 
 // Função para mostrar o container com animação
 function mostrarContainer() {
@@ -407,3 +502,4 @@ function mostrarContainer() {
 
 // Chama a função para mostrar o container ao carregar a página
 document.addEventListener('DOMContentLoaded', mostrarContainer);
+
