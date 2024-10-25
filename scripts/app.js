@@ -482,12 +482,136 @@ confirmDownloadBtn.addEventListener('click', () => {
 // Função para baixar o relatório
 function baixarRelatorio(userName) {
     const resultadoEscolhido = window.resultadoFinal || 'Não disponível'; // Captura o resultado final
-    const content = `Relatório de Resultado - ${userName}\n\nObrigado por usar o TechQuiz!\nSua área recomendada é: ${resultadoEscolhido}.\n\nContinue explorando essa área para mais oportunidades!`;
+    const dataAtual = new Date().toLocaleDateString(); // Obtém a data atual formatada
+
+    // Dados adicionais sobre cada área
+    const descricoes = {
+        "Desenvolvimento Front-End": {
+            descricao: "O desenvolvimento Front-End foca na criação de interfaces de usuário e experiências visuais para sites e aplicativos, utilizando tecnologias como HTML, CSS e JavaScript.",
+            dicas: [
+                "Familiarize-se com HTML, CSS e JavaScript.",
+                "Pratique criando sites responsivos.",
+                "Explore frameworks populares como React ou Vue.js."
+            ],
+            recursos: [
+                "https://developer.mozilla.org/pt-BR/docs/Web/Guide/Front-End",
+                "https://react.dev/",
+                "https://www.w3schools.com/"
+            ]
+        },
+        "Desenvolvimento Back-End": {
+            descricao: "O desenvolvimento Back-End envolve a lógica de servidor, banco de dados e a funcionalidade interna de sistemas, utilizando linguagens server-side como Node.js, Python e PHP.",
+            dicas: [
+                "Aprenda sobre bancos de dados relacionais e não relacionais.",
+                "Domine uma linguagem de servidor como Node.js ou Python.",
+                "Pratique criando APIs RESTful."
+            ],
+            recursos: [
+                "https://nodejs.org/en/docs/",
+                "https://www.python.org/",
+                "https://expressjs.com/"
+            ]
+        },
+        "Data Science": {
+            descricao: "Data Science envolve a análise de dados, estatísticas e machine learning para extrair insights e informações valiosas.",
+            dicas: [
+                "Aprofunde-se em Python e bibliotecas como Pandas e NumPy.",
+                "Aprenda conceitos básicos de estatística.",
+                "Explore ferramentas de visualização de dados como Matplotlib."
+            ],
+            recursos: [
+                "https://www.kaggle.com/learn",
+                "https://scikit-learn.org/",
+                "https://towardsdatascience.com/"
+            ]
+        },
+        "Segurança da Informação": {
+            descricao: "Segurança da Informação foca em proteger sistemas, redes e dados contra ameaças e vulnerabilidades digitais.",
+            dicas: [
+                "Aprenda sobre criptografia e segurança de redes.",
+                "Explore ferramentas de pentest como Kali Linux.",
+                "Domine conceitos de segurança em cloud computing."
+            ],
+            recursos: [
+                "https://www.cybrary.it/",
+                "https://www.offensive-security.com/",
+                "https://www.udemy.com/topic/cyber-security/"
+            ]
+        },
+        "DevOps": {
+            descricao: "DevOps integra desenvolvimento e operações para melhorar a eficiência de software, usando automação e integração contínua.",
+            dicas: [
+                "Familiarize-se com CI/CD e ferramentas como Jenkins.",
+                "Aprenda sobre containers e Docker.",
+                "Explore ferramentas de gerenciamento de infraestrutura como Terraform."
+            ],
+            recursos: [
+                "https://aws.amazon.com/devops/what-is-devops/",
+                "https://www.docker.com/",
+                "https://www.terraform.io/"
+            ]
+        },
+        "UI/UX Design": {
+            descricao: "UI/UX Design envolve criar interfaces de usuário que são visualmente atraentes e fáceis de usar, baseadas no comportamento do usuário.",
+            dicas: [
+                "Aprenda sobre design de interface com Figma ou Adobe XD.",
+                "Estude princípios de usabilidade e design centrado no usuário.",
+                "Pratique criando protótipos de interfaces interativas."
+            ],
+            recursos: [
+                "https://www.interaction-design.org/",
+                "https://www.behance.net/",
+                "https://dribbble.com/"
+            ]
+        },
+        "Gestão de Projetos": {
+            descricao: "Gestão de Projetos envolve coordenar equipes, recursos e prazos para atingir objetivos específicos, utilizando metodologias como Scrum e Agile.",
+            dicas: [
+                "Aprenda sobre metodologias ágeis como Scrum.",
+                "Domine ferramentas de gestão como Trello ou Jira.",
+                "Pratique comunicação e liderança de equipe."
+            ],
+            recursos: [
+                "https://www.scrum.org/",
+                "https://www.atlassian.com/software/jira",
+                "https://www.coursera.org/browse/business/leadership-and-management"
+            ]
+        }
+    };
+
+    const infoArea = descricoes[resultadoEscolhido] || {
+        descricao: "Informações detalhadas não disponíveis para esta área.",
+        dicas: ["Explore mais recursos online sobre esta área."],
+        recursos: ["https://www.google.com"]
+    };
+
+    // Criação do conteúdo do relatório
+    const content = `
+===== TechQuiz - Relatório de Resultado =====
+
+  Nome do Usuário: ${userName}
+  Data do Teste: ${dataAtual}
     
+  Área Recomendada: ${resultadoEscolhido}
+  Descrição da Área:
+  ${infoArea.descricao}
+
+  Dicas para Começar:
+    - ${infoArea.dicas.join('\n    - ')}
+
+  Recursos Recomendados para Estudo:
+    - ${infoArea.recursos.join('\n    - ')}
+
+=============================================
+😁👋 Obrigado por usar o TechQuiz! Continue explorando e aprimorando suas habilidades para alcançar o sucesso na área escolhida!
+=============================================
+    `;
+
+    // Geração do arquivo de relatório
     const blob = new Blob([content], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = `Relatorio_${userName}.txt`;
+    link.download = `Resultado_TechQuiz_${userName}.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
