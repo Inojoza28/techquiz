@@ -133,6 +133,13 @@ body.dark-mode .sobre p{
 
 
 body.dark-mode .sobre ul li{
-    color:#7fa3c8 ;
+    color:#80a4c9;
 }
 
+body.dark-mode .negrito{
+    color: #cbdfec;
+}
+
+body.dark-mode .sobre ul li::before{
+    color: #16b916;
+}

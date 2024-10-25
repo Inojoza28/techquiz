@@ -154,6 +154,7 @@ body {
     color: #3498db; /* Cor do ícone */
 }
 
+
 /* Ajustes de Responsividade */
 @media (max-width: 1024px) {
     .container {
@@ -241,7 +242,7 @@ body {
     body{
         padding-top: 80px;
     }
-    
+
     .container {
         max-width: 85%;
         padding: 15px;
