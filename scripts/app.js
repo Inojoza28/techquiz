@@ -104,6 +104,11 @@ let indicePerguntaAtual = 0;
 // Armazena as respostas do usuário
 let respostasUsuario = [];
 
+// Seleção dos elementos do modal de confirmação
+const modalConfirmacao = document.getElementById('modal-confirmacao');
+const btnConfirmarSair = document.getElementById('btn-confirmar-sair');
+const btnCancelarSair = document.getElementById('btn-cancelar-sair');
+
 let quizIniciado = false;
 
 // Função para iniciar o quiz
@@ -115,30 +120,34 @@ startBtn.addEventListener('click', () => {
     quizIniciado = true; // Marca que o quiz foi iniciado
 });
 
-// Adiciona o evento `beforeunload` quando o quiz for iniciado
-window.addEventListener('beforeunload', function (e) {
-    if (quizIniciado) {
-        const mensagem = 'Tem certeza que deseja sair dessa página? Você perderá o progresso do quiz.';
-        e.preventDefault(); // Previne o comportamento padrão
-        e.returnValue = mensagem; // Defina a mensagem de retorno para exibir o alerta
-        return mensagem; // Retorne a mensagem de alerta
-    }
+// Função para exibir o modal de confirmação ao tentar sair
+function mostrarModalConfirmacao() {
+    modalConfirmacao.classList.remove('oculto');
+}
+
+// Função para esconder o modal de confirmação
+function esconderModalConfirmacao() {
+    modalConfirmacao.classList.add('oculto');
+}
+
+// Adiciona um evento de clique para confirmar a saída
+btnConfirmarSair.addEventListener('click', () => {
+    esconderModalConfirmacao();
+    window.location.href = "index.html"; // Redireciona para a página inicial ou outra página desejada
 });
 
-// Função para voltar à tela inicial do quiz
-function voltarParaTelaInicial() {
-    quizIniciado = false; // Reseta o estado do quiz para indicar que ele não está mais ativo
-    indicePerguntaAtual = 0;
-    respostasUsuario = [];
-    progressBarFill.style.width = '0%';
-    progressBarFill.style.backgroundColor = '#3498db';
-    quizQuestionsSection.classList.remove('resultado-final');
-    quizQuestionsSection.classList.add('oculto');
-    startQuizSection.classList.remove('oculto');
-    document.querySelector('.progress-bar-container').classList.add('oculto');
-    document.getElementById('fecharQuiz').classList.add('oculto');
-    document.getElementById('download-result-btn').classList.add('oculto');
-}
+// Adiciona um evento de clique para cancelar a saída
+btnCancelarSair.addEventListener('click', esconderModalConfirmacao);
+
+// Adiciona a verificação antes de sair da página (ao clicar em links)
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (quizIniciado) {
+            e.preventDefault(); // Evita a navegação imediata
+            mostrarModalConfirmacao(); // Exibe o modal de confirmação
+        }
+    });
+});
 
 
 // Botão "Começar Quiz" com ícone
@@ -654,4 +663,3 @@ function mostrarContainer() {
 
 // Chama a função para mostrar o container ao carregar a página
 document.addEventListener('DOMContentLoaded', mostrarContainer);
-
