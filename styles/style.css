@@ -513,7 +513,7 @@ h2 i {
     .container {
         max-width: 85%;
         padding: 15px;
-        margin-top: 30px; /* Define o espaçamento fixo do topo */
+        margin-top: 60px; /* Define o espaçamento fixo do topo */
         position: relative; /* Mantém a posição relativa */
     }
 
