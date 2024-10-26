@@ -30,7 +30,7 @@ const perguntas = [
     },
     {
         pergunta: "Você se sente mais confortável resolvendo problemas visuais ou solucionando problemas lógicos?",
-        opcoes: ["Problemas Visuais", "Problemas Lógicos", "Ambos, Gosto de Desafios Diversos"] // 3 opções
+        opcoes: ["Problemas Visuais", "Problemas Lógicos", "Ambos, gosto de desafios diversos"] // 3 opções
     },
     {
         pergunta: "Você se interessa mais por entender o comportamento do usuário ou por otimizar o desempenho de sistemas?",
@@ -38,7 +38,7 @@ const perguntas = [
     },
     {
         pergunta: "Você prefere explorar grandes quantidades de dados ou criar interfaces que interajam com o usuário?",
-        opcoes: ["Analisar Dados", "Criar Interfaces", "Ambos São Interessantes"] // 3 opções
+        opcoes: ["Analisar Dados", "Criar Interfaces", "Ambos são interessantes"] // 3 opções
     },
     {
         pergunta: "Você se interessa por explorar tecnologias emergentes ou prefere manter-se em áreas consolidadas?",
@@ -46,7 +46,7 @@ const perguntas = [
     },
     {
         pergunta: "Você gosta de planejar projetos a longo prazo ou prefere tarefas rápidas e de curto prazo?",
-        opcoes: ["Projetos a Longo Prazo", "Tarefas de Curto Prazo", "Gosto de Um Mix de Ambos"] // 3 opções
+        opcoes: ["Projetos a Longo Prazo", "Tarefas de Curto Prazo", "Gosto de Um mix de ambos"] // 3 opções
     },
     {
         pergunta: "Você prefere desenvolver soluções que melhorem a segurança de um sistema ou criar novas funcionalidades?",
@@ -54,7 +54,7 @@ const perguntas = [
     },
     {
         pergunta: "Você se sente mais realizado ao entender como algo funciona ou ao criar algo do zero?",
-        opcoes: ["Entender Como Funciona", "Criar Algo do Zero", "Gosto de Ambas as Coisas"] // 3 opções
+        opcoes: ["Entender Como Funciona", "Criar Algo do Zero", "Gosto de ambas as coisas"] // 3 opções
     },
     {
         pergunta: "Você prefere ambientes de trabalho dinâmicos e rápidos ou metódicos e estruturados?",
@@ -66,7 +66,7 @@ const perguntas = [
     },
     {
         pergunta: "Você prefere entender a infraestrutura de redes ou explorar novas maneiras de melhorar a experiência do usuário?",
-        opcoes: ["Infraestrutura de Redes", "Experiência do Usuário", "Interesso-me Por Ambas"] // 3 opções
+        opcoes: ["Infraestrutura de Redes", "Experiência do Usuário", "Interesso-me por ambas"] // 3 opções
     },
     {
         pergunta: "Você prefere criar protótipos visuais ou desenvolver a lógica por trás de uma aplicação?",
@@ -82,7 +82,7 @@ const perguntas = [
     },
     {
         pergunta: "Você se interessa por explorar vulnerabilidades de sistemas ou por desenhar e criar novas interfaces?",
-        opcoes: ["Explorar Vulnerabilidades", "Desenhar Interfaces", "Ambos São Interessantes para Mim"] // 3 opções
+        opcoes: ["Explorar Vulnerabilidades", "Desenhar Interfaces", "Ambos são interessantes para mim"] // 3 opções
     },
     {
         pergunta: "Você prefere utilizar metodologias ágeis para desenvolvimento rápido ou modelos tradicionais para projetos mais estruturados?",
@@ -102,7 +102,7 @@ const perguntas = [
     },
     {
         pergunta: "Você gosta mais de encontrar falhas e vulnerabilidades ou prefere criar sistemas robustos do zero?",
-        opcoes: ["Encontrar Falhas", "Criar Sistemas Robustos", "Ambos São Importantes para Mim"] // 3 opções
+        opcoes: ["Encontrar Falhas", "Criar Sistemas Robustos", "Ambos são importantes para mim"] // 3 opções
     }
 ];
 
