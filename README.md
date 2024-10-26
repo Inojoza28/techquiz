@@ -3,7 +3,7 @@
 ![TechQuiz Logo](assets/images/Logo.png)
 
 ## 📋 Descrição
-O **TechQuiz** é uma aplicação web interativa projetada para ajudar os usuários a descobrir qual área de Tecnologia da Informação (TI) combina melhor com seu perfil. Com base em uma série de perguntas, o sistema analisa os interesses do usuário e sugere a área de TI que mais se alinha com suas preferências. As áreas abrangidas incluem **Desenvolvimento Front-End**, **Desenvolvimento Back-End**, **Data Science**, **Segurança da Informação**, **DevOps**, **UI/UX Design**, **Gestão de Projetos** e **Desenvolvimento Fullstack**.
+O **TechQuiz** é uma aplicação web interativa projetada para ajudar os usuários a descobrir qual área de Tecnologia da Informação (TI) combina melhor com seu perfil. Com base em uma série de perguntas, o sistema analisa os interesses do usuário e sugere a área de TI que mais se alinha com suas preferências. As áreas abrangidas incluem **Desenvolvimento Front-End**, **Desenvolvimento Back-End**, **Data Science**, **Segurança da Informação**, **DevOps**, **UI/UX Design**, **Gestão de Projetos**,  **Cibersegurança** e **Desenvolvimento Fullstack**.
 
 ## 🚀 Funcionalidades
 - **Quiz Personalizado**: Uma série de perguntas projetadas para traçar um perfil preciso do usuário.
