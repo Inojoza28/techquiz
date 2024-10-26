@@ -43,4 +43,14 @@ O algoritmo do quiz analisa cada resposta fornecida pelo usuário e acumula pont
 - **Gestão de Projetos**: Planejamento, organização e liderança de projetos.
 - **Desenvolvimento Fullstack**: Equilíbrio entre Front-End e Back-End.
 
+## 📝 Lógica de Análise do Quiz
+O algoritmo do quiz atribui pontos às áreas de TI com base nas respostas do usuário. Caso o resultado seja equilibrado entre **Front-End** e **Back-End**, uma mensagem sugere que o usuário explore a área de **Desenvolvimento Fullstack**, abrangendo ambas as competências.
+
+## 📊 Dados Adicionais e Relatório
+O TechQuiz permite ao usuário baixar um relatório personalizado contendo:
+- **Nome do usuário**.
+- **Data do teste**.
+- **Área de TI recomendada**.
+- **Dicas iniciais** para começar.
+- **Recursos online recomendados** para estudo.
 
