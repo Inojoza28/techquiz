@@ -54,3 +54,8 @@ O TechQuiz permite ao usuário baixar um relatório personalizado contendo:
 - **Dicas iniciais** para começar.
 - **Recursos online recomendados** para estudo.
 
+## Contato
+
+- **LinkedIn:** [Carlos Gabriel de Inojoza Santos](https://www.linkedin.com/in/carlos-gabriel-j-de-inojoza-santos-925444286)
+- **GitHub:** [Inojoza28](https://github.com/Inojoza28)
+- **Email:** carlosginojoza@gmail.com
