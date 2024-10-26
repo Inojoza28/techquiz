@@ -18,86 +18,93 @@ const userNameInput = document.getElementById('user-name');
 const perguntas = [
     {
         pergunta: "Você prefere trabalhar em equipe ou sozinho?",
-        opcoes: ["Em Equipe", "Sozinho"]
+        opcoes: ["Em Equipe", "Sozinho", "Depende do Projeto"] // 3 opções
     },
     {
         pergunta: "Você gosta de tarefas que envolvem criatividade ou prefere algo mais técnico e detalhado?",
         opcoes: ["Criativo", "Técnico"]
     },
-    // {
-    //     pergunta: "Você prefere aprender novas tecnologias ou aperfeiçoar habilidades em uma tecnologia específica?",
-    //     opcoes: ["Novas Tecnologias", "Aperfeiçoar Habilidades"]
-    // },
-    // {
-    //     pergunta: "Você se sente mais confortável resolvendo problemas visuais ou solucionando problemas lógicos complexos?",
-    //     opcoes: ["Problemas Visuais", "Problemas Lógicos"]
-    // },
-    // {
-    //     pergunta: "Você se interessa mais por entender o comportamento do usuário ou por otimizar o desempenho de sistemas?",
-    //     opcoes: ["Comportamento do Usuário", "Desempenho de Sistemas"]
-    // },
-    // {
-    //     pergunta: "Você prefere explorar grandes quantidades de dados ou criar interfaces que interajam com o usuário?",
-    //     opcoes: ["Analisar Dados", "Criar Interfaces"]
-    // },
-    // {
-    //     pergunta: "Você se interessa por explorar tecnologias emergentes ou prefere manter-se em áreas consolidadas?",
-    //     opcoes: ["Tecnologias Emergentes", "Áreas Consolidadas"]
-    // },
-    // {
-    //     pergunta: "Você gosta de planejar projetos a longo prazo ou prefere tarefas rápidas e de curto prazo?",
-    //     opcoes: ["Projetos a Longo Prazo", "Tarefas de Curto Prazo"]
-    // },
-    // {
-    //     pergunta: "Você prefere desenvolver soluções que melhorem a segurança de um sistema ou criar novas funcionalidades?",
-    //     opcoes: ["Segurança de Sistemas", "Novas Funcionalidades"]
-    // },
-    // {
-    //     pergunta: "Você se sente mais realizado ao entender como algo funciona ou ao criar algo do zero?",
-    //     opcoes: ["Entender Como Funciona", "Criar Algo do Zero"]
-    // },
-    // {
-    //     pergunta: "Você prefere ambientes de trabalho dinâmicos e rápidos ou metódicos e estruturados?",
-    //     opcoes: ["Dinâmico e Rápido", "Metódico e Estruturado"]
-    // },
-    // {
-    //     pergunta: "Você gosta de explorar ferramentas visuais ou prefere utilizar ferramentas de automação e scripts?",
-    //     opcoes: ["Ferramentas Visuais", "Ferramentas de Automação"]
-    // },
-    // {
-    //     pergunta: "Você prefere entender a infraestrutura de redes ou explorar novas maneiras de melhorar a experiência do usuário?",
-    //     opcoes: ["Infraestrutura de Redes", "Experiência do Usuário"]
-    // },
-    // {
-    //     pergunta: "Você prefere criar protótipos visuais ou desenvolver a lógica por trás de uma aplicação?",
-    //     opcoes: ["Criar Protótipos Visuais", "Desenvolver Lógica"]
-    // },
-    // {
-    //     pergunta: "Você gosta de lidar com dados quantitativos ou preferiria trabalhar com interfaces e interações?",
-    //     opcoes: ["Dados Quantitativos", "Interfaces e Interações"]
-    // },
-    // {
-    //     pergunta: "Você prefere trabalhar com algo mais visual e artístico ou com sistemas complexos e detalhados?",
-    //     opcoes: ["Visual e Artístico", "Sistemas Complexos"]
-    // },
-    // {
-    //     pergunta: "Você se interessa por explorar vulnerabilidades de sistemas ou por desenhar e criar novas interfaces?",
-    //     opcoes: ["Explorar Vulnerabilidades", "Desenhar Interfaces"]
-    // },
-    // {
-    //     pergunta: "Você prefere utilizar metodologias ágeis para desenvolvimento rápido ou modelos tradicionais para projetos mais estruturados?",
-    //     opcoes: ["Metodologias Ágeis", "Modelos Tradicionais"]
-    // },
-    // {
-    //     pergunta: "Você gosta de analisar tendências e padrões ou prefere desenvolver soluções para problemas específicos?",
-    //     opcoes: ["Analisar Tendências", "Desenvolver Soluções"]
-    // },
+    {
+        pergunta: "Você prefere aprender novas tecnologias ou aperfeiçoar habilidades em uma tecnologia específica?",
+        opcoes: ["Novas Tecnologias", "Aperfeiçoar Habilidades"]
+    },
+    {
+        pergunta: "Você se sente mais confortável resolvendo problemas visuais ou solucionando problemas lógicos?",
+        opcoes: ["Problemas Visuais", "Problemas Lógicos", "Ambos, Gosto de Desafios Diversos"] // 3 opções
+    },
+    {
+        pergunta: "Você se interessa mais por entender o comportamento do usuário ou por otimizar o desempenho de sistemas?",
+        opcoes: ["Comportamento do Usuário", "Desempenho de Sistemas"]
+    },
+    {
+        pergunta: "Você prefere explorar grandes quantidades de dados ou criar interfaces que interajam com o usuário?",
+        opcoes: ["Analisar Dados", "Criar Interfaces", "Ambos São Interessantes"] // 3 opções
+    },
+    {
+        pergunta: "Você se interessa por explorar tecnologias emergentes ou prefere manter-se em áreas consolidadas?",
+        opcoes: ["Tecnologias Emergentes", "Áreas Consolidadas"]
+    },
+    {
+        pergunta: "Você gosta de planejar projetos a longo prazo ou prefere tarefas rápidas e de curto prazo?",
+        opcoes: ["Projetos a Longo Prazo", "Tarefas de Curto Prazo", "Gosto de Um Mix de Ambos"] // 3 opções
+    },
+    {
+        pergunta: "Você prefere desenvolver soluções que melhorem a segurança de um sistema ou criar novas funcionalidades?",
+        opcoes: ["Segurança de Sistemas", "Novas Funcionalidades"]
+    },
+    {
+        pergunta: "Você se sente mais realizado ao entender como algo funciona ou ao criar algo do zero?",
+        opcoes: ["Entender Como Funciona", "Criar Algo do Zero", "Gosto de Ambas as Coisas"] // 3 opções
+    },
+    {
+        pergunta: "Você prefere ambientes de trabalho dinâmicos e rápidos ou metódicos e estruturados?",
+        opcoes: ["Dinâmico e Rápido", "Metódico e Estruturado"]
+    },
+    {
+        pergunta: "Você gosta de explorar ferramentas visuais ou prefere utilizar ferramentas de automação e scripts?",
+        opcoes: ["Ferramentas Visuais", "Ferramentas de Automação"]
+    },
+    {
+        pergunta: "Você prefere entender a infraestrutura de redes ou explorar novas maneiras de melhorar a experiência do usuário?",
+        opcoes: ["Infraestrutura de Redes", "Experiência do Usuário", "Interesso-me Por Ambas"] // 3 opções
+    },
+    {
+        pergunta: "Você prefere criar protótipos visuais ou desenvolver a lógica por trás de uma aplicação?",
+        opcoes: ["Criar Protótipos Visuais", "Desenvolver Lógica"]
+    },
+    {
+        pergunta: "Você gosta de lidar com dados quantitativos ou preferiria trabalhar com interfaces e interações?",
+        opcoes: ["Dados Quantitativos", "Interfaces e Interações"]
+    },
+    {
+        pergunta: "Você prefere trabalhar com algo mais visual e artístico ou com sistemas lógicos e detalhados?",
+        opcoes: ["Visual e Artístico", "Sistemas Lógicos"]
+    },
+    {
+        pergunta: "Você se interessa por explorar vulnerabilidades de sistemas ou por desenhar e criar novas interfaces?",
+        opcoes: ["Explorar Vulnerabilidades", "Desenhar Interfaces", "Ambos São Interessantes para Mim"] // 3 opções
+    },
+    {
+        pergunta: "Você prefere utilizar metodologias ágeis para desenvolvimento rápido ou modelos tradicionais para projetos mais estruturados?",
+        opcoes: ["Metodologias Ágeis", "Modelos Tradicionais"]
+    },
+    {
+        pergunta: "Você gosta de analisar tendências e padrões ou prefere desenvolver soluções para problemas específicos?",
+        opcoes: ["Analisar Tendências", "Desenvolver Soluções"]
+    },
     {
         pergunta: "Você prefere lidar com hardware e redes ou se concentrar em software e aplicações?",
         opcoes: ["Hardware e Redes", "Software e Aplicações"]
+    },
+    {
+        pergunta: "Você prefere explorar segurança de dados ou desenvolver interfaces de usuário inovadoras?",
+        opcoes: ["Segurança de Dados", "Interfaces Inovadoras"]
+    },
+    {
+        pergunta: "Você gosta mais de encontrar falhas e vulnerabilidades ou prefere criar sistemas robustos do zero?",
+        opcoes: ["Encontrar Falhas", "Criar Sistemas Robustos", "Ambos São Importantes para Mim"] // 3 opções
     }
 ];
-
 
 // Índice da pergunta atual
 let indicePerguntaAtual = 0;
@@ -260,10 +267,6 @@ function mudarCorBarraFinal() {
 
 
 
-
-
-
-
 // Função para calcular o resultado final do quiz
 function calcularResultado() {
     // Pontuações para cada área de TI
@@ -274,7 +277,8 @@ function calcularResultado() {
         "Segurança da Informação": 0,
         "DevOps": 0,
         "UI/UX Design": 0,
-        "Gestão de Projetos": 0
+        "Gestão de Projetos": 0,
+        "Cibersegurança": 0
     };
 
     // Analisando as respostas
@@ -282,9 +286,13 @@ function calcularResultado() {
         const pergunta = perguntas[index];
 
         // Lógica de pontuação baseada nas respostas
-        if (index === 0) { // Pergunta sobre trabalho em equipe ou sozinho
+        if (index === 0) { // Trabalho em equipe ou sozinho
             if (resposta === "0") contadorResultados["Gestão de Projetos"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
+            else if (resposta === "1") contadorResultados["Desenvolvimento Back-End"]++;
+            else if (resposta === "2") { // Resposta "Depende do Projeto"
+                contadorResultados["Desenvolvimento Front-End"]++;
+                contadorResultados["Desenvolvimento Back-End"]++;
+            }
         } else if (index === 1) { // Criatividade vs Técnico
             if (resposta === "0") contadorResultados["UI/UX Design"]++;
             else contadorResultados["Desenvolvimento Back-End"]++;
@@ -293,25 +301,41 @@ function calcularResultado() {
             else contadorResultados["Segurança da Informação"]++;
         } else if (index === 3) { // Problemas visuais vs lógicos
             if (resposta === "0") contadorResultados["UI/UX Design"]++;
-            else contadorResultados["Data Science"]++;
+            else if (resposta === "1") contadorResultados["Data Science"]++;
+            else if (resposta === "2") { // Resposta "Ambos, Gosto de Desafios Diversos"
+                contadorResultados["Desenvolvimento Front-End"]++;
+                contadorResultados["Desenvolvimento Back-End"]++;
+            }
         } else if (index === 4) { // Comportamento do usuário vs desempenho de sistemas
             if (resposta === "0") contadorResultados["Desenvolvimento Front-End"]++;
             else contadorResultados["Desenvolvimento Back-End"]++;
         } else if (index === 5) { // Dados vs Interfaces
             if (resposta === "0") contadorResultados["Data Science"]++;
-            else contadorResultados["Desenvolvimento Front-End"]++;
+            else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
+            else if (resposta === "2") { // Resposta "Ambos São Interessantes"
+                contadorResultados["Data Science"]++;
+                contadorResultados["Desenvolvimento Front-End"]++;
+            }
         } else if (index === 6) { // Tecnologias emergentes vs áreas consolidadas
             if (resposta === "0") contadorResultados["DevOps"]++;
             else contadorResultados["Segurança da Informação"]++;
         } else if (index === 7) { // Longo prazo vs curto prazo
             if (resposta === "0") contadorResultados["Gestão de Projetos"]++;
-            else contadorResultados["UI/UX Design"]++;
+            else if (resposta === "1") contadorResultados["UI/UX Design"]++;
+            else if (resposta === "2") { // Resposta "Gosto de Um Mix de Ambos"
+                contadorResultados["Gestão de Projetos"]++;
+                contadorResultados["UI/UX Design"]++;
+            }
         } else if (index === 8) { // Segurança de sistemas vs novas funcionalidades
             if (resposta === "0") contadorResultados["Segurança da Informação"]++;
             else contadorResultados["Desenvolvimento Back-End"]++;
         } else if (index === 9) { // Entender como funciona vs criar do zero
             if (resposta === "0") contadorResultados["Data Science"]++;
-            else contadorResultados["Desenvolvimento Front-End"]++;
+            else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
+            else if (resposta === "2") { // Resposta "Gosto de Ambas as Coisas"
+                contadorResultados["Data Science"]++;
+                contadorResultados["Desenvolvimento Front-End"]++;
+            }
         } else if (index === 10) { // Dinâmico vs estruturado
             if (resposta === "0") contadorResultados["DevOps"]++;
             else contadorResultados["Gestão de Projetos"]++;
@@ -320,7 +344,11 @@ function calcularResultado() {
             else contadorResultados["DevOps"]++;
         } else if (index === 12) { // Infraestrutura de redes vs experiência do usuário
             if (resposta === "0") contadorResultados["Segurança da Informação"]++;
-            else contadorResultados["Desenvolvimento Front-End"]++;
+            else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
+            else if (resposta === "2") { // Resposta "Interesso-me Por Ambas"
+                contadorResultados["Segurança da Informação"]++;
+                contadorResultados["Desenvolvimento Front-End"]++;
+            }
         } else if (index === 13) { // Criar protótipos visuais vs desenvolver lógica
             if (resposta === "0") contadorResultados["UI/UX Design"]++;
             else contadorResultados["Desenvolvimento Back-End"]++;
@@ -332,7 +360,11 @@ function calcularResultado() {
             else contadorResultados["Desenvolvimento Back-End"]++;
         } else if (index === 16) { // Vulnerabilidades de sistemas vs desenhar interfaces
             if (resposta === "0") contadorResultados["Segurança da Informação"]++;
-            else contadorResultados["UI/UX Design"]++;
+            else if (resposta === "1") contadorResultados["UI/UX Design"]++;
+            else if (resposta === "2") { // Resposta "Ambos São Interessantes para Mim"
+                contadorResultados["Segurança da Informação"]++;
+                contadorResultados["UI/UX Design"]++;
+            }
         } else if (index === 17) { // Ágil vs tradicional
             if (resposta === "0") contadorResultados["DevOps"]++;
             else contadorResultados["Gestão de Projetos"]++;
@@ -342,6 +374,16 @@ function calcularResultado() {
         } else if (index === 19) { // Hardware e redes vs software e aplicações
             if (resposta === "0") contadorResultados["Segurança da Informação"]++;
             else contadorResultados["Desenvolvimento Front-End"]++;
+        } else if (index === 20) { // Segurança de dados vs interfaces inovadoras
+            if (resposta === "0") contadorResultados["Cibersegurança"]++;
+            else contadorResultados["Desenvolvimento Front-End"]++;
+        } else if (index === 21) { // Encontrar falhas vs criar sistemas robustos
+            if (resposta === "0") contadorResultados["Cibersegurança"]++;
+            else if (resposta === "1") contadorResultados["Desenvolvimento Back-End"]++;
+            else if (resposta === "2") { // Resposta "Ambos São Importantes para Mim"
+                contadorResultados["Cibersegurança"]++;
+                contadorResultados["Desenvolvimento Back-End"]++;
+            }
         }
     });
 
@@ -350,23 +392,28 @@ function calcularResultado() {
         contadorResultados[a] > contadorResultados[b] ? a : b
     );
 
+    // Verifica se Front-End e Back-End têm pontuações equilibradas
+    const diferencaFB = Math.abs(contadorResultados["Desenvolvimento Front-End"] - contadorResultados["Desenvolvimento Back-End"]);
+    const isFullstackSuggestion = diferencaFB <= 2; // Considera-se Fullstack se a diferença for pequena
+
     // Exibe o resultado final
-    exibirResultado(areaEscolhida);
+    exibirResultado(areaEscolhida, isFullstackSuggestion);
 }
 
 
 
+
 // Função para exibir o resultado final ao usuário
-function exibirResultado(areaEscolhida) {
+function exibirResultado(areaEscolhida, isFullstackSuggestion) {
     const descricoes = {
         "Desenvolvimento Front-End": {
             descricao: "O desenvolvimento Front-End foca na criação de interfaces e experiências de usuário para websites e aplicativos. É uma área ideal para quem gosta de trabalhar com HTML, CSS e JavaScript para criar layouts e interações visuais.",
-            linkEstudo: "https://developer.mozilla.org/pt-BR/docs/Web/Guide/Front-End",
+            linkEstudo: "https://roadmap.sh/frontend",
             icone: "fas fa-laptop-code" // Ícone específico para a área
         },
         "Desenvolvimento Back-End": {
             descricao: "O desenvolvimento Back-End envolve a construção da lógica e funcionamento interno de sistemas. É ideal para quem gosta de trabalhar com linguagens de programação server-side e bancos de dados.",
-            linkEstudo: "https://nodejs.org/en/docs/",
+            linkEstudo: "https://roadmap.sh/backend",
             icone: "fas fa-server"
         },
         "Data Science": {
@@ -381,18 +428,23 @@ function exibirResultado(areaEscolhida) {
         },
         "DevOps": {
             descricao: "DevOps é a prática de integrar desenvolvimento e operações para melhorar a eficiência e a qualidade de software. Envolve automação, integração contínua e gerenciamento de infraestrutura.",
-            linkEstudo: "https://aws.amazon.com/devops/what-is-devops/",
+            linkEstudo: "https://roadmap.sh/devops",
             icone: "fas fa-tools"
         },
         "UI/UX Design": {
             descricao: "UI/UX Design foca na criação de interfaces de usuário agradáveis e funcionais. É ideal para quem gosta de entender o comportamento do usuário e criar designs visuais atraentes.",
-            linkEstudo: "https://www.interaction-design.org/",
+            linkEstudo: "https://roadmap.sh/ux-design",
             icone: "fas fa-pencil-ruler"
         },
         "Gestão de Projetos": {
             descricao: "Gestão de Projetos envolve coordenar equipes, prazos e recursos para atingir objetivos específicos. É ideal para quem gosta de planejar, organizar e liderar projetos complexos.",
             linkEstudo: "https://www.scrum.org/",
             icone: "fas fa-project-diagram"
+        },
+        "Cibersegurança": {
+            descricao: "Cibersegurança envolve a proteção de sistemas e redes contra ameaças digitais. É ideal para quem gosta de trabalhar com segurança de dados, análise de vulnerabilidades e proteção de informações críticas.",
+            linkEstudo: "https://roadmap.sh/cyber-security",
+            icone: "fas fa-lock"
         }
     };
 
@@ -405,6 +457,17 @@ function exibirResultado(areaEscolhida) {
                 <i class="${resultado.icone}"></i> Área Recomendada: ${areaEscolhida}
             </h2>
             <p>${resultado.descricao}</p>
+    `;
+
+    // Adiciona sugestão de Fullstack caso seja relevante
+    if (isFullstackSuggestion && (areaEscolhida === "Desenvolvimento Front-End" || areaEscolhida === "Desenvolvimento Back-End")) {
+        questionContainer.innerHTML += `
+            <p class="sugestao-fullstack"><strong><i class="fas fa-info-circle"></i> Sugestão:</strong> Baseado nas suas respostas, você parece ter um interesse equilibrado entre Front-End e Back-End. Considere explorar a área de Desenvolvimento Fullstack, que abrange ambas as competências!</p>
+        `;
+    }
+    
+
+    questionContainer.innerHTML += `
             <a href="${resultado.linkEstudo}" target="_blank" class="botao-estudo">Explorar Recursos</a>
             <button id="reiniciar-btn" class="botao-reiniciar"><i class="fas fa-redo"></i> Reiniciar Quiz</button>
         </div>
@@ -441,6 +504,7 @@ function exibirResultado(areaEscolhida) {
         fecharQuizBtn.addEventListener('click', voltarParaTelaInicial);
     }
 }
+
 
 // Função para reiniciar o quiz e voltar à primeira pergunta
 
@@ -557,100 +621,113 @@ function baixarRelatorio(userName) {
     const resultadoEscolhido = window.resultadoFinal || 'Não disponível'; // Captura o resultado final
     const dataAtual = new Date().toLocaleDateString(); // Obtém a data atual formatada
 
-    // Dados adicionais sobre cada área
-    const descricoes = {
-        "Desenvolvimento Front-End": {
-            descricao: "O desenvolvimento Front-End foca na criação de interfaces de usuário e experiências visuais para sites e aplicativos, utilizando tecnologias como HTML, CSS e JavaScript.",
-            dicas: [
-                "Familiarize-se com HTML, CSS e JavaScript.",
-                "Pratique criando sites responsivos.",
-                "Explore frameworks populares como React ou Vue.js."
-            ],
-            recursos: [
-                "https://developer.mozilla.org/pt-BR/docs/Web/Guide/Front-End",
-                "https://react.dev/",
-                "https://www.w3schools.com/"
-            ]
-        },
-        "Desenvolvimento Back-End": {
-            descricao: "O desenvolvimento Back-End envolve a lógica de servidor, banco de dados e a funcionalidade interna de sistemas, utilizando linguagens server-side como Node.js, Python e PHP.",
-            dicas: [
-                "Aprenda sobre bancos de dados relacionais e não relacionais.",
-                "Domine uma linguagem de servidor como Node.js ou Python.",
-                "Pratique criando APIs RESTful."
-            ],
-            recursos: [
-                "https://nodejs.org/en/docs/",
-                "https://www.python.org/",
-                "https://expressjs.com/"
-            ]
-        },
-        "Data Science": {
-            descricao: "Data Science envolve a análise de dados, estatísticas e machine learning para extrair insights e informações valiosas.",
-            dicas: [
-                "Aprofunde-se em Python e bibliotecas como Pandas e NumPy.",
-                "Aprenda conceitos básicos de estatística.",
-                "Explore ferramentas de visualização de dados como Matplotlib."
-            ],
-            recursos: [
-                "https://www.kaggle.com/learn",
-                "https://scikit-learn.org/",
-                "https://towardsdatascience.com/"
-            ]
-        },
-        "Segurança da Informação": {
-            descricao: "Segurança da Informação foca em proteger sistemas, redes e dados contra ameaças e vulnerabilidades digitais.",
-            dicas: [
-                "Aprenda sobre criptografia e segurança de redes.",
-                "Explore ferramentas de pentest como Kali Linux.",
-                "Domine conceitos de segurança em cloud computing."
-            ],
-            recursos: [
-                "https://www.cybrary.it/",
-                "https://www.offensive-security.com/",
-                "https://www.udemy.com/topic/cyber-security/"
-            ]
-        },
-        "DevOps": {
-            descricao: "DevOps integra desenvolvimento e operações para melhorar a eficiência de software, usando automação e integração contínua.",
-            dicas: [
-                "Familiarize-se com CI/CD e ferramentas como Jenkins.",
-                "Aprenda sobre containers e Docker.",
-                "Explore ferramentas de gerenciamento de infraestrutura como Terraform."
-            ],
-            recursos: [
-                "https://aws.amazon.com/devops/what-is-devops/",
-                "https://www.docker.com/",
-                "https://www.terraform.io/"
-            ]
-        },
-        "UI/UX Design": {
-            descricao: "UI/UX Design envolve criar interfaces de usuário que são visualmente atraentes e fáceis de usar, baseadas no comportamento do usuário.",
-            dicas: [
-                "Aprenda sobre design de interface com Figma ou Adobe XD.",
-                "Estude princípios de usabilidade e design centrado no usuário.",
-                "Pratique criando protótipos de interfaces interativas."
-            ],
-            recursos: [
-                "https://www.interaction-design.org/",
-                "https://www.behance.net/",
-                "https://dribbble.com/"
-            ]
-        },
-        "Gestão de Projetos": {
-            descricao: "Gestão de Projetos envolve coordenar equipes, recursos e prazos para atingir objetivos específicos, utilizando metodologias como Scrum e Agile.",
-            dicas: [
-                "Aprenda sobre metodologias ágeis como Scrum.",
-                "Domine ferramentas de gestão como Trello ou Jira.",
-                "Pratique comunicação e liderança de equipe."
-            ],
-            recursos: [
-                "https://www.scrum.org/",
-                "https://www.atlassian.com/software/jira",
-                "https://www.coursera.org/browse/business/leadership-and-management"
-            ]
-        }
-    };
+// Dados adicionais sobre cada área
+const descricoes = {
+    "Desenvolvimento Front-End": {
+        descricao: "O desenvolvimento Front-End foca na criação de interfaces de usuário e experiências visuais para sites e aplicativos, utilizando tecnologias como HTML, CSS e JavaScript.",
+        dicas: [
+            "Familiarize-se com HTML, CSS e JavaScript.",
+            "Pratique criando sites responsivos.",
+            "Explore frameworks populares como React ou Vue.js."
+        ],
+        recursos: [
+            "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n",
+            "https://react.dev/",
+            "https://www.w3schools.com/"
+        ]
+    },
+    "Desenvolvimento Back-End": {
+        descricao: "O desenvolvimento Back-End envolve a lógica de servidor, banco de dados e a funcionalidade interna de sistemas, utilizando linguagens server-side como Node.js, Python e PHP.",
+        dicas: [
+            "Aprenda sobre bancos de dados relacionais e não relacionais.",
+            "Domine uma linguagem de servidor como Node.js ou Python.",
+            "Pratique criando APIs RESTful."
+        ],
+        recursos: [
+            "https://nodejs.org/en/docs/",
+            "https://www.python.org/",
+            "https://expressjs.com/"
+        ]
+    },
+    "Data Science": {
+        descricao: "Data Science envolve a análise de dados, estatísticas e machine learning para extrair insights e informações valiosas.",
+        dicas: [
+            "Aprofunde-se em Python e bibliotecas como Pandas e NumPy.",
+            "Aprenda conceitos básicos de estatística.",
+            "Explore ferramentas de visualização de dados como Matplotlib."
+        ],
+        recursos: [
+            "https://www.kaggle.com/learn",
+            "https://scikit-learn.org/",
+            "https://towardsdatascience.com/"
+        ]
+    },
+    "Segurança da Informação": {
+        descricao: "Segurança da Informação foca em proteger sistemas, redes e dados contra ameaças e vulnerabilidades digitais.",
+        dicas: [
+            "Aprenda sobre criptografia e segurança de redes.",
+            "Explore ferramentas de pentest como Kali Linux.",
+            "Domine conceitos de segurança em cloud computing."
+        ],
+        recursos: [
+            "https://www.cybrary.it/",
+            "https://www.offensive-security.com/",
+            "https://www.udemy.com/topic/cyber-security/"
+        ]
+    },
+    "DevOps": {
+        descricao: "DevOps integra desenvolvimento e operações para melhorar a eficiência de software, usando automação e integração contínua.",
+        dicas: [
+            "Familiarize-se com CI/CD e ferramentas como Jenkins.",
+            "Aprenda sobre containers e Docker.",
+            "Explore ferramentas de gerenciamento de infraestrutura como Terraform."
+        ],
+        recursos: [
+            "https://aws.amazon.com/devops/what-is-devops/",
+            "https://www.docker.com/",
+            "https://www.terraform.io/"
+        ]
+    },
+    "UI/UX Design": {
+        descricao: "UI/UX Design envolve criar interfaces de usuário que são visualmente atraentes e fáceis de usar, baseadas no comportamento do usuário.",
+        dicas: [
+            "Aprenda sobre design de interface com Figma ou Adobe XD.",
+            "Estude princípios de usabilidade e design centrado no usuário.",
+            "Pratique criando protótipos de interfaces interativas."
+        ],
+        recursos: [
+            "https://www.interaction-design.org/",
+            "https://www.behance.net/",
+            "https://dribbble.com/"
+        ]
+    },
+    "Gestão de Projetos": {
+        descricao: "Gestão de Projetos envolve coordenar equipes, recursos e prazos para atingir objetivos específicos, utilizando metodologias como Scrum e Agile.",
+        dicas: [
+            "Aprenda sobre metodologias ágeis como Scrum.",
+            "Domine ferramentas de gestão como Trello ou Jira.",
+            "Pratique comunicação e liderança de equipe."
+        ],
+        recursos: [
+            "https://www.scrum.org/",
+            "https://www.atlassian.com/software/jira",
+            "https://www.coursera.org/browse/business/leadership-and-management"
+        ]
+    },
+    "Cibersegurança": {
+        descricao: "Cibersegurança envolve proteger sistemas, redes e dados contra ataques e ameaças digitais. É uma área para quem deseja entender vulnerabilidades e fortalecer defesas digitais.",
+        dicas: [
+            "Aprenda sobre técnicas de análise de vulnerabilidades.",
+            "Explore frameworks de segurança como OWASP.",
+            "Familiarize-se com práticas de segurança em ambientes de cloud computing."
+        ],
+        recursos: [
+            "https://www.cybrary.it/",
+            "https://owasp.org/",
+            "https://www.comptia.org/"
+        ]
+    }
+};
 
     const infoArea = descricoes[resultadoEscolhido] || {
         descricao: "Informações detalhadas não disponíveis para esta área.",

@@ -147,3 +147,14 @@ body.dark-mode .sobre ul li::before{
 body.dark-mode #modal-confirmacao .modal-content{
     background-color: #2f2f2f;
 }
+
+
+body.dark-mode .sugestao-fullstack {
+    color: #a7d3ff;
+}
+
+body.dark-mode .resultado-final p.sugestao-fullstack{
+    background-color: #212121;
+    border-left: 4px solid #aed7f3;
+}
+
