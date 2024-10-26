@@ -379,7 +379,8 @@ h2 i {
 /* Botão de Baixar Relatório */
 .botao-baixar {
     display: inline-block;
-    margin: 20px 0;
+    margin: 10px auto;
+    margin-bottom: 15px;
     background-color: rgb(53 187 110); /* Cor verde suave */
     color: #ffffff;
     padding: 12px 30px;
@@ -712,6 +713,11 @@ h2 i {
     }
     .botao-confirmar, .botao-cancelar{
         padding: 8px 28px;
+    }
+
+    .botao-baixar{
+        padding: 10px 28px;
+        font-size: 16px;
     }
 }
 

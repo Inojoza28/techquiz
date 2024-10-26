@@ -3,51 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon" sizes="64x64">
+    <meta name="description" content="Descubra sua área ideal de TI com o TechQuiz. Um quiz interativo para identificar a carreira de tecnologia que mais combina com o seu perfil.">
     <title>TechQuiz - Descubra Sua Área Ideal</title>
-    <!-- Link para o arquivo CSS -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/Logo.png" type="image/x-icon" sizes="64x64">
+    <!-- Link para os arquivos CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/modo-dark.css">
-     <!-- Link para a biblioteca Font Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head>
+    <!-- Link para a biblioteca Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <!-- Botão de Modo Dark/Light -->
     <button id="theme-toggle" class="theme-toggle">
         <i id="theme-icon" class="fas fa-moon"></i>
-      </button>
+    </button>
 
     <!-- Container Principal -->
     <div class="container">
-        
+
+        <!-- Navbar -->
         <nav class="navbar">
             <ul>
                 <li><a href="#inicio" class="nav-link active">Início</a></li>
                 <li><a href="sobre.html" class="nav-link">Sobre</a></li>
             </ul>
         </nav>
-    <!-- Header do Quiz -->
-    <header class="quiz-header">
-    <div class="logo-titulo">
-        <img src="assets/images/Logo.png" alt="Logo TechQuiz" class="logo-techquiz"> <!-- Logo -->
-        <h1>TechQuiz <span class="fechar-quiz oculto" id="fecharQuiz"><i class="fas fa-times"></i></span></h1>
-    </div>
-    <p>Descubra qual área de TI combina melhor com você</p>
-    </header>
 
+        <!-- Header do Quiz -->
+        <header class="quiz-header">
+            <div class="logo-titulo">
+                <img src="assets/images/Logo.png" alt="Logo TechQuiz" class="logo-techquiz"> <!-- Logo -->
+                <h1>TechQuiz <span class="fechar-quiz oculto" id="fecharQuiz"><i class="fas fa-times"></i></span></h1>
+            </div>
+            <p>Descubra qual área de TI combina melhor com você</p>
+        </header>
 
         <!-- Seção de Início do Quiz -->
         <section class="start-quiz">
             <button id="start-btn" class="btn-start">Começar Quiz</button>
         </section>
 
+        <!-- Barra de Progresso -->
         <section class="progress-bar-container oculto">
             <div class="progress-bar">
                 <div class="progress-bar-fill"></div>
             </div>
         </section>
+
         <!-- Seção de Perguntas do Quiz -->
         <section class="quiz-questions oculto">
             <div id="question-container">
@@ -57,30 +61,36 @@
                 <button id="next-btn" class="btn-next oculto">Próxima</button>
             </div>
         </section>
-        <!-- Botão de Baixar Relatório fora do resultado, mas dentro do container -->
-        <button id="download-result-btn" class="botao-baixar oculto"><i class="fas fa-download"></i> Baixar Resultado</button>
 
+        <!-- Botão de Baixar Relatório -->
+        <button id="download-result-btn" class="botao-baixar oculto">
+            <i class="fas fa-download"></i> Baixar Resultado
+        </button>
     </div>
-<!-- Modal para Preencher o Nome -->
-<div id="modal-download" class="modal oculto">
-    <div class="modal-content">
-        <span class="close-modal" id="closeModal">&times;</span>
-        <h3>Preencha seu Nome para Baixar o Relatório</h3>
-        <input type="text" id="user-name" placeholder="Digite seu nome" required>
-        <button id="confirm-download" class="botao-confirmar"><i class="fas fa-download"></i> Confirmar Download</button>
-    </div>
-</div>
-<!-- Modal de Confirmação para Sair -->
-<div id="modal-confirmacao" class="modal oculto">
-    <div class="modal-content">
-        <p>Tem certeza que deseja sair desta página? Você perderá o progresso do quiz.</p>
-        <button id="btn-confirmar-sair" class="botao-confirmar">Sim, sair</button>
-        <button id="btn-cancelar-sair" class="botao-cancelar">Cancelar</button>
-    </div>
-</div>
 
-    <!-- Link para o arquivo JavaScript -->
-     <script src="scripts/modo-dark.js"></script>
+    <!-- Modal para Preencher o Nome -->
+    <div id="modal-download" class="modal oculto">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>Preencha seu Nome para Baixar o Relatório</h3>
+            <input type="text" id="user-name" placeholder="Digite seu nome" required>
+            <button id="confirm-download" class="botao-confirmar">
+                <i class="fas fa-download"></i> Confirmar Download
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação para Sair -->
+    <div id="modal-confirmacao" class="modal oculto">
+        <div class="modal-content">
+            <p>Tem certeza que deseja sair desta página? Você perderá o progresso do quiz.</p>
+            <button id="btn-confirmar-sair" class="botao-confirmar">Sim, sair</button>
+            <button id="btn-cancelar-sair" class="botao-cancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Link para os arquivos JavaScript -->
+    <script src="scripts/modo-dark.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </html>
