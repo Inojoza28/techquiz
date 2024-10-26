@@ -143,3 +143,7 @@ body.dark-mode .negrito{
 body.dark-mode .sobre ul li::before{
     color: #16b916;
 }
+
+body.dark-mode #modal-confirmacao .modal-content{
+    background-color: #2f2f2f;
+}

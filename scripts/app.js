@@ -109,7 +109,8 @@ const modalConfirmacao = document.getElementById('modal-confirmacao');
 const btnConfirmarSair = document.getElementById('btn-confirmar-sair');
 const btnCancelarSair = document.getElementById('btn-cancelar-sair');
 
-let quizIniciado = false;
+let quizIniciado = false; // Controle para verificar se o quiz está em andamento
+let navigationHref = "index.html"; // Link padrão para redirecionamento
 
 // Função para iniciar o quiz
 startBtn.addEventListener('click', () => {
@@ -133,18 +134,49 @@ function esconderModalConfirmacao() {
 // Adiciona um evento de clique para confirmar a saída
 btnConfirmarSair.addEventListener('click', () => {
     esconderModalConfirmacao();
-    window.location.href = "index.html"; // Redireciona para a página inicial ou outra página desejada
+    window.location.href = navigationHref; // Redireciona para o link armazenado
 });
 
 // Adiciona um evento de clique para cancelar a saída
 btnCancelarSair.addEventListener('click', esconderModalConfirmacao);
+
+// Função para fechar o quiz sem mostrar o modal de confirmação
+function fecharQuiz() {
+    // Reseta as variáveis de controle
+    indicePerguntaAtual = 0;
+    respostasUsuario = [];
+    quizIniciado = false; // Marca que o quiz foi fechado
+
+    // Reseta o estilo da barra de progresso
+    progressBarFill.style.width = '0%';
+    progressBarFill.style.backgroundColor = '#3498db'; // Volta à cor padrão
+
+    // Oculta o resultado final e volta para a tela inicial
+    quizQuestionsSection.classList.remove('resultado-final');
+    quizQuestionsSection.classList.add('oculto');
+    startQuizSection.classList.remove('oculto');
+
+    // Oculta a barra de progresso
+    document.querySelector('.progress-bar-container').classList.add('oculto');
+
+    // Oculta o botão de download novamente
+    downloadBtn.classList.add('oculto');
+}
 
 // Adiciona a verificação antes de sair da página (ao clicar em links)
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
         if (quizIniciado) {
             e.preventDefault(); // Evita a navegação imediata
-            mostrarModalConfirmacao(); // Exibe o modal de confirmação
+
+            // Verifica se o usuário clicou no link "Sobre"
+            if (link.getAttribute('href') === "sobre.html") {
+                navigationHref = "sobre.html";
+            } else {
+                navigationHref = "index.html";
+            }
+
+            mostrarModalConfirmacao(); // Exibe o modal de confirmação apenas se o quiz estiver aberto
         }
     });
 });
@@ -441,6 +473,7 @@ function voltarParaTelaInicial() {
         // Reseta as variáveis de controle
         indicePerguntaAtual = 0;
         respostasUsuario = [];
+        quizIniciado = false; // Marca que o quiz foi fechado
 
         // Reseta o estilo da barra de progresso
         progressBarFill.style.width = '0%';
@@ -454,14 +487,17 @@ function voltarParaTelaInicial() {
         // Oculta a barra de progresso
         document.querySelector('.progress-bar-container').classList.add('oculto');
 
-        // Oculta o "X" somente ao voltar para a tela inicial
+        // Oculta o botão de download novamente
+        downloadBtn.classList.add('oculto');
+
+        // Oculta o botão "X" quando voltar para a tela inicial
         const fecharQuizBtn = document.getElementById('fecharQuiz');
         if (fecharQuizBtn) {
             fecharQuizBtn.classList.add('oculto');
         }
-
-        // Oculta o botão de download novamente
-        downloadBtn.classList.add('oculto');
+    } else {
+        // Se o usuário clicar em "Cancelar", o quiz não deve ser fechado
+        return; // Sai da função sem fazer nada
     }
 }
 
