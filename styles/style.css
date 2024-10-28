@@ -735,13 +735,17 @@ h2 i {
     }
 
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .quiz-header h1{
-        font-size: 26px;
+        font-size: 25px;
     }
     .quiz-header p{
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    .opcao{
+        padding: 12px;
     }
 
     .btn-start, .btn-next, .botao-estudo {
@@ -798,14 +802,16 @@ h2 i {
     }
      /* Ajuste adicional para dispositivos muito pequenos */
      .btn-start, .btn-next, #prev-btn {
-        width: 100%;
+        width: 80%;
         padding: 10px 0;
         margin-bottom: 10px;
         font-size: 1rem;
+        margin: 5px auto 10px;
+        border-radius: 12px;
     }
 
     #prev-btn {
-        width: 100%;
+        width: 40%;
     }
 
 }
