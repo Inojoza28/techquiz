@@ -248,6 +248,36 @@ h2 i {
     background-color: #27ae60;
 }
 
+#prev-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    /* background-color: #3498db; Cor de fundo padrão */
+    color: #3498db; /* Cor do texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+#prev-btn i {
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Efeito hover */
+#prev-btn:hover {
+    background-color: #9dc8e4; /* Cor de fundo ao passar o mouse */
+}
+
+
+/* Estilo para ocultar o botão quando a classe "oculto" estiver ativa */
+#prev-btn.oculto {
+    display: none;
+}
+
+
 /* Opções de Respostas */
 .opcoes {
     list-style-type: none;
@@ -656,6 +686,34 @@ h2 i {
         width: 100%; /* Botões ocupam toda a largura da tela */
         font-size: 1rem;
     }
+
+    /* Ajusta os botões para dispositivos menores */
+    .btn-start, .btn-next, #prev-btn {
+        width: 100%;
+        padding: 15px 0;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    #prev-btn {
+        width: 100%;
+    }
+
+    /* Ajuste para o container dos botões */
+    .navigation {
+        display: flex;
+        flex-direction: column; /* Configura os botões em coluna */
+    }
+
+    /* Ordem dos botões para dispositivos menores */
+    .btn-next {
+        order: 1; /* Define a ordem do botão "Próxima" para aparecer primeiro */
+        margin-bottom: 10px; /* Espaçamento abaixo do botão "Próxima" */
+    }
+
+    #prev-btn {
+        order: 2; /* Define a ordem do botão "Voltar" para aparecer depois */
+    }
 }
 
 @media (max-width: 480px) {
@@ -738,6 +796,16 @@ h2 i {
         font-size: 0.9rem;
         text-align: justify;
     }
+     /* Ajuste adicional para dispositivos muito pequenos */
+     .btn-start, .btn-next, #prev-btn {
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    #prev-btn {
+        width: 100%;
+    }
+
 }
-
-

@@ -17,94 +17,107 @@ const userNameInput = document.getElementById('user-name');
 // Dados do Quiz: perguntas e opções reformuladas e ampliadas
 const perguntas = [
     {
-        pergunta: "Você prefere trabalhar em equipe ou sozinho?",
-        opcoes: ["Em Equipe", "Sozinho", "Depende do Projeto"] // 3 opções
+        pergunta: "Você prefere trabalhar com análise de dados ou criar interfaces visuais?",
+        opcoes: ["Análise de Dados", "Interfaces Visuais", "Ambos são igualmente interessantes"]
     },
     {
-        pergunta: "Você gosta de tarefas que envolvem criatividade ou prefere algo mais técnico e detalhado?",
-        opcoes: ["Criativo", "Técnico"]
+        pergunta: "Você gosta mais de entender a lógica de funcionamento por trás dos sistemas ou de criar experiências de usuário atraentes?",
+        opcoes: ["Lógica de Sistemas", "Experiências de Usuário"]
     },
     {
-        pergunta: "Você prefere aprender novas tecnologias ou aperfeiçoar habilidades em uma tecnologia específica?",
-        opcoes: ["Novas Tecnologias", "Aperfeiçoar Habilidades"]
+        pergunta: "Você prefere explorar novas tecnologias ou se concentrar em melhorar a segurança de sistemas existentes?",
+        opcoes: ["Novas Tecnologias", "Segurança de Sistemas"]
     },
     {
-        pergunta: "Você se sente mais confortável resolvendo problemas visuais ou solucionando problemas lógicos?",
-        opcoes: ["Problemas Visuais", "Problemas Lógicos", "Ambos, gosto de desafios diversos"] // 3 opções
+        pergunta: "Você se sente mais confortável resolvendo problemas visuais ou otimizando algoritmos e desempenho?",
+        opcoes: ["Problemas Visuais", "Algoritmos e Desempenho", "Tenho interesse por ambos"]
     },
     {
-        pergunta: "Você se interessa mais por entender o comportamento do usuário ou por otimizar o desempenho de sistemas?",
-        opcoes: ["Comportamento do Usuário", "Desempenho de Sistemas"]
+        pergunta: "Você gosta mais de trabalhar com grandes volumes de dados ou desenvolver aplicações web?",
+        opcoes: ["Volumes de Dados", "Aplicações Web"]
     },
     {
-        pergunta: "Você prefere explorar grandes quantidades de dados ou criar interfaces que interajam com o usuário?",
-        opcoes: ["Analisar Dados", "Criar Interfaces", "Ambos são interessantes"] // 3 opções
+        pergunta: "Você prefere construir sistemas de backend lógicos ou protótipos visuais para o usuário?",
+        opcoes: ["Sistemas de Backend", "Protótipos Visuais"]
     },
     {
-        pergunta: "Você se interessa por explorar tecnologias emergentes ou prefere manter-se em áreas consolidadas?",
-        opcoes: ["Tecnologias Emergentes", "Áreas Consolidadas"]
+        pergunta: "Você se interessa mais por proteger sistemas contra vulnerabilidades ou por criar designs inovadores?",
+        opcoes: ["Proteção de Sistemas", "Design Inovador"]
     },
     {
-        pergunta: "Você gosta de planejar projetos a longo prazo ou prefere tarefas rápidas e de curto prazo?",
-        opcoes: ["Projetos a Longo Prazo", "Tarefas de Curto Prazo", "Gosto de Um mix de ambos"] // 3 opções
+        pergunta: "Você gosta de criar soluções rápidas e ágeis ou prefere trabalhar em projetos bem estruturados e a longo prazo?",
+        opcoes: ["Soluções Rápidas e Ágeis", "Projetos Estruturados e a Longo Prazo"]
     },
     {
-        pergunta: "Você prefere desenvolver soluções que melhorem a segurança de um sistema ou criar novas funcionalidades?",
-        opcoes: ["Segurança de Sistemas", "Novas Funcionalidades"]
+        pergunta: "Você prefere desenvolver funcionalidades visuais em websites ou automatizar processos usando scripts?",
+        opcoes: ["Funcionalidades Visuais", "Automatização com Scripts"]
     },
     {
-        pergunta: "Você se sente mais realizado ao entender como algo funciona ou ao criar algo do zero?",
-        opcoes: ["Entender Como Funciona", "Criar Algo do Zero", "Gosto de ambas as coisas"] // 3 opções
+        pergunta: "Você tem mais interesse em liderar equipes e planejar projetos ou em codificar e desenvolver soluções técnicas?",
+        opcoes: ["Liderança e Planejamento", "Codificação e Desenvolvimento Técnico"]
     },
     {
-        pergunta: "Você prefere ambientes de trabalho dinâmicos e rápidos ou metódicos e estruturados?",
-        opcoes: ["Dinâmico e Rápido", "Metódico e Estruturado"]
+        pergunta: "Você prefere ambientes de trabalho dinâmicos e desafiadores ou processos bem definidos e organizados?",
+        opcoes: ["Dinâmico e Desafiador", "Definido e Organizado"]
     },
     {
-        pergunta: "Você gosta de explorar ferramentas visuais ou prefere utilizar ferramentas de automação e scripts?",
-        opcoes: ["Ferramentas Visuais", "Ferramentas de Automação"]
+        pergunta: "Você gosta de encontrar falhas e vulnerabilidades em sistemas ou prefere focar na criação de novas funcionalidades?",
+        opcoes: ["Encontrar Vulnerabilidades", "Criar Funcionalidades"]
     },
     {
-        pergunta: "Você prefere entender a infraestrutura de redes ou explorar novas maneiras de melhorar a experiência do usuário?",
-        opcoes: ["Infraestrutura de Redes", "Experiência do Usuário", "Interesso-me por ambas"] // 3 opções
+        pergunta: "Você prefere trabalhar em equipe para alcançar objetivos ou individualmente, onde tenha mais controle sobre suas tarefas?",
+        opcoes: ["Trabalhar em Equipe", "Trabalhar Individualmente"]
     },
     {
-        pergunta: "Você prefere criar protótipos visuais ou desenvolver a lógica por trás de uma aplicação?",
-        opcoes: ["Criar Protótipos Visuais", "Desenvolver Lógica"]
+        pergunta: "Você se interessa mais por linguagens de programação para backend ou por ferramentas de design de interface?",
+        opcoes: ["Programação Backend", "Design de Interface"]
     },
     {
-        pergunta: "Você gosta de lidar com dados quantitativos ou preferiria trabalhar com interfaces e interações?",
-        opcoes: ["Dados Quantitativos", "Interfaces e Interações"]
+        pergunta: "Você gosta mais de explorar a infraestrutura de redes ou de desenvolver interfaces amigáveis para o usuário?",
+        opcoes: ["Infraestrutura de Redes", "Interfaces Amigáveis", "Tenho interesse por ambos"]
     },
     {
-        pergunta: "Você prefere trabalhar com algo mais visual e artístico ou com sistemas lógicos e detalhados?",
-        opcoes: ["Visual e Artístico", "Sistemas Lógicos"]
+        pergunta: "Você prefere desenvolver e testar segurança de sistemas ou criar funcionalidades interativas?",
+        opcoes: ["Segurança de Sistemas", "Funcionalidades Interativas"]
     },
     {
-        pergunta: "Você se interessa por explorar vulnerabilidades de sistemas ou por desenhar e criar novas interfaces?",
-        opcoes: ["Explorar Vulnerabilidades", "Desenhar Interfaces", "Ambos são interessantes para mim"] // 3 opções
+        pergunta: "Você gosta de analisar dados para encontrar padrões ou de desenvolver a lógica de aplicações?",
+        opcoes: ["Analisar Dados", "Desenvolver Lógica"]
     },
     {
-        pergunta: "Você prefere utilizar metodologias ágeis para desenvolvimento rápido ou modelos tradicionais para projetos mais estruturados?",
+        pergunta: "Você se interessa por ferramentas visuais de design ou por infraestrutura de servidores e cloud computing?",
+        opcoes: ["Ferramentas de Design", "Infraestrutura de Servidores"]
+    },
+    {
+        pergunta: "Você prefere desenvolver projetos desde o início ou melhorar sistemas já existentes?",
+        opcoes: ["Desenvolver do Zero", "Melhorar Sistemas Existentes", "Ambas as opções são interessantes"]
+    },
+    {
+        pergunta: "Você gosta de documentar processos e gerenciar prazos ou prefere criar e testar código?",
+        opcoes: ["Documentação e Gestão de Prazos", "Criação e Teste de Código"]
+    },
+    {
+        pergunta: "Você prefere explorar conceitos de inteligência artificial e machine learning ou criar interfaces responsivas?",
+        opcoes: ["Inteligência Artificial e Machine Learning", "Interfaces Responsivas"]
+    },
+    {
+        pergunta: "Você gosta de trabalhar com metodologias ágeis para desenvolvimento rápido ou prefere seguir modelos tradicionais?",
         opcoes: ["Metodologias Ágeis", "Modelos Tradicionais"]
     },
     {
-        pergunta: "Você gosta de analisar tendências e padrões ou prefere desenvolver soluções para problemas específicos?",
-        opcoes: ["Analisar Tendências", "Desenvolver Soluções"]
+        pergunta: "Você prefere criar protótipos e wireframes ou desenvolver a lógica e a arquitetura de sistemas?",
+        opcoes: ["Protótipos e Wireframes", "Lógica e Arquitetura de Sistemas"]
     },
     {
-        pergunta: "Você prefere lidar com hardware e redes ou se concentrar em software e aplicações?",
+        pergunta: "Você gosta de analisar riscos de segurança ou de desenhar interfaces de usuário intuitivas?",
+        opcoes: ["Análise de Riscos de Segurança", "Desenho de Interfaces"]
+    },
+    {
+        pergunta: "Você prefere trabalhar com hardware e redes ou focar em software e aplicações?",
         opcoes: ["Hardware e Redes", "Software e Aplicações"]
-    },
-    {
-        pergunta: "Você prefere explorar segurança de dados ou desenvolver interfaces de usuário inovadoras?",
-        opcoes: ["Segurança de Dados", "Interfaces Inovadoras"]
-    },
-    {
-        pergunta: "Você gosta mais de encontrar falhas e vulnerabilidades ou prefere criar sistemas robustos do zero?",
-        opcoes: ["Encontrar Falhas", "Criar Sistemas Robustos", "Ambos são importantes para mim"] // 3 opções
     }
 ];
+
 
 // Índice da pergunta atual
 let indicePerguntaAtual = 0;
@@ -193,8 +206,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
 startBtn.innerHTML = `<i class="fas fa-play"></i> Começar Quiz`; // Ícone de "play"
 
 // Ajuste no botão "Próxima" para incluir ícone de seta
-nextBtn.innerHTML = `<i class="fas fa-arrow-right"></i> Próxima`; // Ícone de seta para a direita
+nextBtn.innerHTML = `<b>Próxima</b>  <i class="fas fa-arrow-right"></i>`; // Ícone de seta para a direita
 
+const prevBtn = document.getElementById('prev-btn'); // Seleção do botão "Voltar"
 
 
 // Função para carregar uma pergunta
@@ -211,6 +225,13 @@ function carregarPergunta() {
         </ul>
     `;
 
+    // Exibe o botão "Voltar" se não estiver na primeira pergunta
+    if (indicePerguntaAtual > 0) {
+        prevBtn.classList.remove('oculto'); // Exibe o botão "Voltar"
+    } else {
+        prevBtn.classList.add('oculto'); // Oculta o botão "Voltar" se estiver na primeira pergunta
+    }
+
     // Atualiza a barra de progresso
     atualizarBarraDeProgresso();
 
@@ -224,6 +245,15 @@ function carregarPergunta() {
 
     nextBtn.classList.add('oculto');
 }
+
+
+// Evento para retroceder para a pergunta anterior
+prevBtn.addEventListener('click', () => {
+    if (indicePerguntaAtual > 0) {
+        indicePerguntaAtual--;
+        carregarPergunta();
+    }
+});
 
 
 // Função para selecionar uma resposta
@@ -257,6 +287,9 @@ nextBtn.addEventListener('click', () => {
     } else {
         calcularResultado(); // Calcula o resultado quando o quiz é concluído
         mudarCorBarraFinal(); // Muda a cor da barra ao finalizar o quiz
+
+        // Oculta o botão "Voltar" ao exibir o resultado final
+        prevBtn.classList.add('oculto');
     }
 });
 
@@ -283,107 +316,146 @@ function calcularResultado() {
 
     // Analisando as respostas
     respostasUsuario.forEach((resposta, index) => {
-        const pergunta = perguntas[index];
-
-        // Lógica de pontuação baseada nas respostas
-        if (index === 0) { // Trabalho em equipe ou sozinho
-            if (resposta === "0") contadorResultados["Gestão de Projetos"]++;
-            else if (resposta === "1") contadorResultados["Desenvolvimento Back-End"]++;
-            else if (resposta === "2") { // Resposta "Depende do Projeto"
-                contadorResultados["Desenvolvimento Front-End"]++;
-                contadorResultados["Desenvolvimento Back-End"]++;
-            }
-        } else if (index === 1) { // Criatividade vs Técnico
-            if (resposta === "0") contadorResultados["UI/UX Design"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
-        } else if (index === 2) { // Novas tecnologias vs Aperfeiçoar habilidades
-            if (resposta === "0") contadorResultados["Desenvolvimento Front-End"]++;
-            else contadorResultados["Segurança da Informação"]++;
-        } else if (index === 3) { // Problemas visuais vs lógicos
-            if (resposta === "0") contadorResultados["UI/UX Design"]++;
-            else if (resposta === "1") contadorResultados["Data Science"]++;
-            else if (resposta === "2") { // Resposta "Ambos, Gosto de Desafios Diversos"
-                contadorResultados["Desenvolvimento Front-End"]++;
-                contadorResultados["Desenvolvimento Back-End"]++;
-            }
-        } else if (index === 4) { // Comportamento do usuário vs desempenho de sistemas
-            if (resposta === "0") contadorResultados["Desenvolvimento Front-End"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
-        } else if (index === 5) { // Dados vs Interfaces
-            if (resposta === "0") contadorResultados["Data Science"]++;
-            else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
-            else if (resposta === "2") { // Resposta "Ambos São Interessantes"
-                contadorResultados["Data Science"]++;
-                contadorResultados["Desenvolvimento Front-End"]++;
-            }
-        } else if (index === 6) { // Tecnologias emergentes vs áreas consolidadas
-            if (resposta === "0") contadorResultados["DevOps"]++;
-            else contadorResultados["Segurança da Informação"]++;
-        } else if (index === 7) { // Longo prazo vs curto prazo
-            if (resposta === "0") contadorResultados["Gestão de Projetos"]++;
-            else if (resposta === "1") contadorResultados["UI/UX Design"]++;
-            else if (resposta === "2") { // Resposta "Gosto de Um Mix de Ambos"
-                contadorResultados["Gestão de Projetos"]++;
-                contadorResultados["UI/UX Design"]++;
-            }
-        } else if (index === 8) { // Segurança de sistemas vs novas funcionalidades
-            if (resposta === "0") contadorResultados["Segurança da Informação"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
-        } else if (index === 9) { // Entender como funciona vs criar do zero
-            if (resposta === "0") contadorResultados["Data Science"]++;
-            else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
-            else if (resposta === "2") { // Resposta "Gosto de Ambas as Coisas"
-                contadorResultados["Data Science"]++;
-                contadorResultados["Desenvolvimento Front-End"]++;
-            }
-        } else if (index === 10) { // Dinâmico vs estruturado
-            if (resposta === "0") contadorResultados["DevOps"]++;
-            else contadorResultados["Gestão de Projetos"]++;
-        } else if (index === 11) { // Ferramentas visuais vs automação
-            if (resposta === "0") contadorResultados["UI/UX Design"]++;
-            else contadorResultados["DevOps"]++;
-        } else if (index === 12) { // Infraestrutura de redes vs experiência do usuário
-            if (resposta === "0") contadorResultados["Segurança da Informação"]++;
-            else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
-            else if (resposta === "2") { // Resposta "Interesso-me Por Ambas"
-                contadorResultados["Segurança da Informação"]++;
-                contadorResultados["Desenvolvimento Front-End"]++;
-            }
-        } else if (index === 13) { // Criar protótipos visuais vs desenvolver lógica
-            if (resposta === "0") contadorResultados["UI/UX Design"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
-        } else if (index === 14) { // Dados quantitativos vs interfaces
-            if (resposta === "0") contadorResultados["Data Science"]++;
-            else contadorResultados["Desenvolvimento Front-End"]++;
-        } else if (index === 15) { // Visual e artístico vs sistemas complexos
-            if (resposta === "0") contadorResultados["UI/UX Design"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
-        } else if (index === 16) { // Vulnerabilidades de sistemas vs desenhar interfaces
-            if (resposta === "0") contadorResultados["Segurança da Informação"]++;
-            else if (resposta === "1") contadorResultados["UI/UX Design"]++;
-            else if (resposta === "2") { // Resposta "Ambos São Interessantes para Mim"
-                contadorResultados["Segurança da Informação"]++;
-                contadorResultados["UI/UX Design"]++;
-            }
-        } else if (index === 17) { // Ágil vs tradicional
-            if (resposta === "0") contadorResultados["DevOps"]++;
-            else contadorResultados["Gestão de Projetos"]++;
-        } else if (index === 18) { // Tendências e padrões vs soluções específicas
-            if (resposta === "0") contadorResultados["Data Science"]++;
-            else contadorResultados["Desenvolvimento Back-End"]++;
-        } else if (index === 19) { // Hardware e redes vs software e aplicações
-            if (resposta === "0") contadorResultados["Segurança da Informação"]++;
-            else contadorResultados["Desenvolvimento Front-End"]++;
-        } else if (index === 20) { // Segurança de dados vs interfaces inovadoras
-            if (resposta === "0") contadorResultados["Cibersegurança"]++;
-            else contadorResultados["Desenvolvimento Front-End"]++;
-        } else if (index === 21) { // Encontrar falhas vs criar sistemas robustos
-            if (resposta === "0") contadorResultados["Cibersegurança"]++;
-            else if (resposta === "1") contadorResultados["Desenvolvimento Back-End"]++;
-            else if (resposta === "2") { // Resposta "Ambos São Importantes para Mim"
-                contadorResultados["Cibersegurança"]++;
-                contadorResultados["Desenvolvimento Back-End"]++;
-            }
+        switch(index) {
+            case 0: // Análise de dados ou interfaces visuais
+                if (resposta === "0") contadorResultados["Data Science"]++;
+                else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
+                else {
+                    contadorResultados["Data Science"]++;
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                }
+                break;
+            case 1: // Lógica de sistemas ou experiências de usuário
+                if (resposta === "0") contadorResultados["Desenvolvimento Back-End"]++;
+                else contadorResultados["UI/UX Design"]++;
+                break;
+            case 2: // Novas tecnologias vs segurança de sistemas
+                if (resposta === "0") {
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                    contadorResultados["DevOps"]++;
+                } else {
+                    contadorResultados["Segurança da Informação"]++;
+                    contadorResultados["Cibersegurança"]++;
+                }
+                break;
+            case 3: // Problemas visuais vs algoritmos
+                if (resposta === "0") contadorResultados["UI/UX Design"]++;
+                else if (resposta === "1") contadorResultados["Desenvolvimento Back-End"]++;
+                else {
+                    contadorResultados["UI/UX Design"]++;
+                    contadorResultados["Desenvolvimento Back-End"]++;
+                }
+                break;
+            case 4: // Volumes de dados vs aplicações web
+                if (resposta === "0") contadorResultados["Data Science"]++;
+                else contadorResultados["Desenvolvimento Front-End"]++;
+                break;
+            case 5: // Backend complexo vs protótipos visuais
+                if (resposta === "0") contadorResultados["Desenvolvimento Back-End"]++;
+                else contadorResultados["UI/UX Design"]++;
+                break;
+            case 6: // Proteção de sistemas vs design inovador
+                if (resposta === "0") {
+                    contadorResultados["Segurança da Informação"]++;
+                    contadorResultados["Cibersegurança"]++;
+                } else {
+                    contadorResultados["UI/UX Design"]++;
+                }
+                break;
+            case 7: // Soluções rápidas vs projetos estruturados
+                if (resposta === "0") contadorResultados["DevOps"]++;
+                else contadorResultados["Gestão de Projetos"]++;
+                break;
+            case 8: // Funcionalidades visuais vs scripts
+                if (resposta === "0") contadorResultados["Desenvolvimento Front-End"]++;
+                else contadorResultados["Desenvolvimento Back-End"]++;
+                break;
+            case 9: // Liderança vs desenvolvimento técnico
+                if (resposta === "0") contadorResultados["Gestão de Projetos"]++;
+                else {
+                    contadorResultados["Desenvolvimento Back-End"]++;
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                }
+                break;
+            case 10: // Dinâmico vs organizado
+                if (resposta === "0") contadorResultados["DevOps"]++;
+                else contadorResultados["Gestão de Projetos"]++;
+                break;
+            case 11: // Vulnerabilidades vs novas funcionalidades
+                if (resposta === "0") contadorResultados["Cibersegurança"]++;
+                else contadorResultados["Desenvolvimento Front-End"]++;
+                break;
+            case 12: // Equipe vs individual
+                if (resposta === "0") {
+                    contadorResultados["Gestão de Projetos"]++;
+                    contadorResultados["DevOps"]++;
+                } else {
+                    contadorResultados["Desenvolvimento Back-End"]++;
+                }
+                break;
+            case 13: // Backend vs design de interface
+                if (resposta === "0") contadorResultados["Desenvolvimento Back-End"]++;
+                else contadorResultados["UI/UX Design"]++;
+                break;
+            case 14: // Infraestrutura vs interfaces amigáveis
+                if (resposta === "0") {
+                    contadorResultados["DevOps"]++;
+                    contadorResultados["Segurança da Informação"]++;
+                } else if (resposta === "1") contadorResultados["Desenvolvimento Front-End"]++;
+                else {
+                    contadorResultados["Segurança da Informação"]++;
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                }
+                break;
+            case 15: // Segurança vs funcionalidades interativas
+                if (resposta === "0") contadorResultados["Segurança da Informação"]++;
+                else contadorResultados["Desenvolvimento Front-End"]++;
+                break;
+            case 16: // Dados vs lógica de aplicações
+                if (resposta === "0") contadorResultados["Data Science"]++;
+                else contadorResultados["Desenvolvimento Back-End"]++;
+                break;
+            case 17: // Design visual vs infraestrutura
+                if (resposta === "0") contadorResultados["UI/UX Design"]++;
+                else contadorResultados["DevOps"]++;
+                break;
+            case 18: // Do zero vs melhorar sistemas
+                if (resposta === "0") {
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                    contadorResultados["Desenvolvimento Back-End"]++;
+                } else if (resposta === "1") contadorResultados["DevOps"]++;
+                else {
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                    contadorResultados["Desenvolvimento Back-End"]++;
+                }
+                break;
+            case 19: // Documentação vs criação de código
+                if (resposta === "0") contadorResultados["Gestão de Projetos"]++;
+                else {
+                    contadorResultados["Desenvolvimento Back-End"]++;
+                    contadorResultados["Desenvolvimento Front-End"]++;
+                }
+                break;
+            case 20: // IA e ML vs interfaces responsivas
+                if (resposta === "0") contadorResultados["Data Science"]++;
+                else contadorResultados["Desenvolvimento Front-End"]++;
+                break;
+            case 21: // Ágil vs tradicional
+                if (resposta === "0") contadorResultados["DevOps"]++;
+                else contadorResultados["Gestão de Projetos"]++;
+                break;
+            case 22: // Protótipos vs lógica de sistemas
+                if (resposta === "0") contadorResultados["UI/UX Design"]++;
+                else contadorResultados["Desenvolvimento Back-End"]++;
+                break;
+            case 23: // Riscos de segurança vs desenho de interfaces
+                if (resposta === "0") contadorResultados["Cibersegurança"]++;
+                else contadorResultados["UI/UX Design"]++;
+                break;
+            case 24: // Hardware e redes vs software e aplicações
+                if (resposta === "0") contadorResultados["Segurança da Informação"]++;
+                else contadorResultados["Desenvolvimento Front-End"]++;
+                break;
         }
     });
 
@@ -392,15 +464,13 @@ function calcularResultado() {
         contadorResultados[a] > contadorResultados[b] ? a : b
     );
 
-    // Verifica se Front-End e Back-End têm pontuações equilibradas
+    // Verifica se Front-End e Back-End têm pontuações equilibradas para sugerir Fullstack
     const diferencaFB = Math.abs(contadorResultados["Desenvolvimento Front-End"] - contadorResultados["Desenvolvimento Back-End"]);
-    const isFullstackSuggestion = diferencaFB <= 2; // Considera-se Fullstack se a diferença for pequena
+    const isFullstackSuggestion = diferencaFB <= 2 && (contadorResultados["Desenvolvimento Front-End"] > 0 || contadorResultados["Desenvolvimento Back-End"] > 0);
 
     // Exibe o resultado final
     exibirResultado(areaEscolhida, isFullstackSuggestion);
 }
-
-
 
 
 // Função para exibir o resultado final ao usuário

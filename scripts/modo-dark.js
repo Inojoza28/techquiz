@@ -30,5 +30,4 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       themeIcon.classList.add('fa-moon'); // Lua aparece por padrão
     }
-  });
-  
+  });  
