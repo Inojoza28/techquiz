@@ -37,7 +37,7 @@ const perguntas = [
         opcoes: ["Volumes de Dados", "Aplicações Web"]
     },
     {
-        pergunta: "Você prefere construir sistemas de backend lógicos ou protótipos visuais para o usuário?",
+        pergunta: "Você prefere construir sistemas de backend robustos ou protótipos visuais para o usuário?",
         opcoes: ["Sistemas de Backend", "Protótipos Visuais"]
     },
     {
