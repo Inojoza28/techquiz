@@ -725,7 +725,7 @@ h2 i {
     .container {
         max-width: 85%;
         padding: 15px;
-        margin-bottom: 60px;
+        margin-bottom: 80px;
     }
     .modal-content{
         width: 78%;
@@ -804,7 +804,6 @@ h2 i {
      .btn-start, .btn-next, #prev-btn {
         width: 80%;
         padding: 10px 0;
-        margin-bottom: 10px;
         font-size: 1rem;
         margin: 5px auto 10px;
         border-radius: 12px;
